@@ -1,0 +1,991 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+/* ==========================================
+   1. Reset & Common Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard';
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* 공통 컨테이너 및 버튼 */
+section {
+    max-width: 1440px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section_title {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.section_title h2 {
+    font-size: 31px;
+    font-weight: 700;
+    color: #111;
+}
+
+.btn_wrap {
+    text-align: center;
+    margin-top: 88px;
+    margin-bottom: 288px;
+}
+
+.cta_btn {
+    display: inline-block;
+    padding: 10px 200px;
+    background-color: #31CD32; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.cta_btn:hover {
+    background-color: #28b029;
+}
+
+/* ==========================================
+   2. Header
+   ========================================== */
+
+.header_top {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_top > div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+/* 검색바 */
+.search {
+    display: flex;
+    align-items: flex-end;
+    padding: 6px 16px;
+    width: 320px;
+    background-color: #EEEEEE;
+}
+
+.search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 13px;
+}
+
+.search button {
+    color: #777;
+    font-size: 14px;
+}
+
+/* 상단 유저 메뉴 */
+.user_nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.user_nav a {
+    font-size: 16px;
+    color: #666;
+}
+
+/* 메인 네비게이션 */
+.header_bottom {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.all_menu_btn {
+    font-size: 20px;
+    margin-right: 25px;
+    color: #333;
+}
+
+.main_nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main_nav a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    transition: color 0.2s;
+}
+
+.main_nav a:hover {
+    color: #31CD32;
+}
+
+/* ==========================================
+   3. Main Banner (Slider)
+   ========================================== */
+.main_banner {
+    max-width: 1440px;
+    margin: 40px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    margin-bottom: 240px;
+}
+
+.slider_container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.slider_container img {
+    width: 100%;
+    height: 590px;
+    object-fit: contain;
+}
+
+/* 슬라이더 인디케이터 */
+.slider_dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #31CD32;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   4. Section 1: 이달의 전통식품 (3열 카드리스트)
+   ========================================== */
+.card_grid_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card_grid_3 .card {
+    display: block;
+    background: #fff;
+}
+
+.card_grid_3 .img_box {
+    width: 100%;
+    height: 504px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.card_grid_3 .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card_grid_3 .card:hover .img_box img {
+    transform: scale(1.04);
+}
+
+.card_grid_3 h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+.card_grid_3 span {
+    font-size: 16px;
+    color: #777;
+}
+
+/* ==========================================
+   5. Section 2: K-푸드트렌드 (비디오)
+   ========================================== */
+.section_title_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.section_title_wrap h2{
+    font-size: 31px;
+    font-weight: 700;
+    color: #111;
+}
+.sns_links {
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+    color: #666;
+}
+
+.video_grid_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.video_container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+.video_container video {
+    width: 100%;
+    height: 393px;
+    object-fit: cover;
+    display: block;
+}
+
+.video_card h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 288px;
+}
+
+/* ==========================================
+   6. Section 3: 전통상차림 (왼쪽 메인 + 오른쪽 2x2)
+   ========================================== */
+.tfood_container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 27px;
+}
+
+/* 왼쪽 메인 대표 카드 */
+.main_card a {
+    position: relative; 
+    display: block;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.main_card img {
+    width: 100%;
+    height: 627px; 
+    min-height: 380px;
+    object-fit: cover;
+}
+
+.main_card .card_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #ffffff;
+}
+
+.main_card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.main_card p {
+    font-size: 15px;
+    color: #dddddd;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 오른쪽 2x2 서브 그리드 */
+.sub_card_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.sub_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_card img {
+    width: 100%;
+    height: 261px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sub_card span {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.sub_card b {
+    text-align: center;
+    font-size: 16px ;
+    margin-top: 4px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   7. Section 4: 향토&지역요리 (4열 12개 그리드)
+   ========================================== */
+.hfood_box_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 76px 24px;
+}
+
+.boxitem {
+    display: flex;
+    flex-direction: column;
+}
+
+.boxitem .img_box {
+    width: 100%;
+    height: 381px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.boxitem .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item_info h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.item_info p {
+    font-size: 17px;
+    color: #888;
+}
+
+/* ///////////////////////////////// */
+footer {
+    background-color: #f9f9f9;
+    border-top: 1px solid #e7e7e7;
+    padding: 30px 0 50px;
+    margin-top: 80px;
+}
+
+.footer_nav {
+    max-width: 1440px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.footer_nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.footer_nav a {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+.footer_content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.company_info p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.company_info .copyright {
+    margin-top: 10px;
+    color: #999;
+}
+
+.escrow_logo img {
+    height: 40px;
+}
+
+/* ////////////////////////// */
+/* 미디어쿼리 태블릿 */
+/* ==========================================
+   8. Tablet Responsive Styles (768px 이하)
+   ========================================== */
+@media screen and (max-width: 768px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    header > .header_top{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom > button{
+        margin-right: unset;
+    }
+
+    /* --- 공통 요소 및 여백 재설정 --- */
+    section {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 20px;
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+        margin-bottom: 136px; /* PC의 288px 여백을 현실적인 모바일/태블릿 여백으로 조정 */
+    }
+
+    .cta_btn {
+        width: 100%; /* 버튼이 너비를 채우도록 설정 */
+        padding: 14px 0;
+        font-size: 16px;
+    }
+
+    /* --- Header --- */
+    .header_top {
+        padding: 12px 16px;
+    }
+
+    .search, 
+    .user_nav {
+        display: none; /* 검색바 및 상단 로그인 메뉴 숨김 */
+    }
+
+    .header_bottom {
+        justify-content: space-between;
+        padding: 0 16px;
+        height: auto;
+    }
+
+    .main_nav {
+        display: none; /* GNB 네비게이션 숨김 (필요시 모바일 메뉴 드로어로 구현) */
+    }
+    .all_menu_btn{
+        display: block;
+    }
+
+    /* --- Main Banner --- */
+    .main_banner {
+        margin: 20px auto 40px;
+        padding: 0 16px;
+        margin-bottom: 136px;
+    }
+
+    .slider_container img {
+        height: 500px; /* 이미지 높이 축소 */
+        object-fit: cover;
+    }
+
+    /* --- Section 1: 이달의 전통식품 (3열 -> 2열) --- */
+    .card_grid_3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .card_grid_3 .img_box {
+        height: 344px;
+    }
+
+    .card_grid_3 h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card_grid_3 span {
+        font-size: 14px;
+    }
+
+    /* 3번째 카드 숨김 (태블릿 시안 기준 2개만 노출) */
+    .card_grid_3 .card:nth-child(3) {
+        display: none;
+    }
+
+    /* --- Section 2: K-푸드트렌드 (2열 -> 1열) --- */
+    .sns_links {
+        display: none; /* SNS 아이콘 숨김 */
+    }
+
+    .video_grid_2 {
+        grid-template-columns: 1fr; /* 1열 배치 */
+        gap: 20px;
+    }
+
+    .video_card:nth-child(2) {
+        display: none; /* 태블릿 시안대로 비디오 1개만 노출 */
+    }
+
+    .video_container video {
+        height: 378px;
+    }
+
+    .video_card h3 {
+        font-size: 18px;
+        font-width: 900;
+        margin-bottom: 0;
+        text-align: center;
+        margin-bottom: 136px;
+    }
+
+    /* --- Section 3: 전통상차림 (좌우 2열 -> 상하 1열) --- */
+    .tfood_container {
+        grid-template-columns:1, 1.2fr;
+        gap: 16px;
+    }
+
+    .main_card img {
+        height: 240px;
+        min-height: auto;
+    }
+
+    .main_card h3 {
+        font-size: 16px;
+    }
+
+    .main_card p {
+        font-size: 13px;
+    }
+
+    .sub_card_grid {
+        grid-template-columns: repeat(2, 1fr); /* 서브 카드 2열 배치 */
+        gap: 16px;
+        width: 360px;
+    }
+
+    /* 태블릿 시안 기준 3번째, 4번째 서브 카드 숨김 */
+    .sub_card_grid .sub_card:nth-child(3),
+    .sub_card_grid .sub_card:nth-child(4) {
+        display: none;
+    }
+
+    .sub_card img {
+        height: 140px;
+    }
+
+    .sub_card span {
+        font-size: 13px;
+    }
+
+    .sub_card b {
+        font-size: 14px;
+    }
+
+    /* --- Section 4: 향토&지역요리 (4열 -> 2열) --- */
+    .hfood_box_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+    }
+
+    .boxitem .img_box {
+        height: 373px;
+    }
+
+    .item_info h4 {
+        font-size: 16px;
+    }
+
+    .item_info p {
+        font-size: 13px;
+    }
+
+    /* 태블릿 시안 기준 상위 6개 항목만 노출 (필요 시 유지 혹은 주석 해제) */
+    .hfood_box_grid .boxitem:nth-child(n+7) {
+        display: none;
+    }
+
+    /* --- Footer --- */
+    footer {
+        padding: 30px 0;
+        margin-top: 40px;
+    }
+
+    .footer_nav ul {
+        flex-wrap: wrap;
+        gap: 10px 15px;
+    }
+
+    .footer_content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .escrow_logo {
+        align-self: flex-end; /* 에스크로 로고 우측 정렬 */
+    }
+}
+
+/* /////////////////////////////////////////// */
+/* 미디어쿼리 모바일 */
+
+
+@media screen and (max-width: 360px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    header > .header_top{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom > button{
+        margin-right: unset;
+    }
+
+
+
+    /* --- 공통 요소 및 여백 재설정 --- */
+    section {
+        margin: 28px auto;
+        padding: 0 16px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 15px;
+
+    }
+
+    /* 제목 우측 화살표 링크 아이콘 연출 */
+    .section_title h2::after,
+    .section_title_wrap h2::after {
+        content: ' >';
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+    }
+
+    /* 모바일 시안에서 하단 초록색 버튼 숨김 */
+    .btn_wrap {
+        display: none;
+    }
+
+    /* --- Header --- */
+
+    .logo img {
+        height: 32px; /* 모바일 로고 크기 축소 */
+        width: auto;
+  
+    }
+
+    /* --- Main Banner --- */
+    .main_banner {
+        margin: 10px auto 24px;
+        padding: 0 12px;
+    }
+
+    .slider_container img {
+        height: 313px; /* 모바일 전용 슬라이드 높이 */
+        
+        border-radius: 8px;
+    }
+
+    .slider_dots {
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot.active {
+        width: 14px;
+    }
+
+    main > section > .section_title,
+    .section_title_wrap{
+        margin-bottom: 4px;
+    }
+   
+
+    /* --- Section 1: 이달의 전통식품 (가로 스크롤 형태) --- */
+    .card_grid_3 {
+        display: flex; /* 그리드에서 가로 플렉스로 변경하여 가로 스크롤 유도 */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px; /* 스크롤바 영역 확보 */
+        /* 스크롤바 숨기기 (선택사항) */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .card_grid_3::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card_grid_3 .card {
+        flex: 0 0 82%; /* 화면 너비의 82%를 차지해 오른쪽 카드가 살짝 잘려 보이게 설정 */
+        scroll-snap-align: start;
+    }
+
+    .card_grid_3 .card:nth-child(3) {
+        display: block; /* 모바일에서 가로 스크롤로 모두 확인 가능하게 복구 */
+    }
+
+    .card_grid_3 .img_box {
+        height: 263px;
+        border-radius: 12px;
+    }
+
+    .card_grid_3 h3 {
+        font-size: 13px;
+        margin-top: 8px;
+        margin-bottom: 2px;
+    }
+
+    .card_grid_3 span {
+        font-size: 11px;
+
+    }
+
+    /* --- Section 2: K-푸드트렌드 --- */
+    .video_container video {
+        height: 190px;
+        border-radius: 8px;
+    }
+
+    .video_card h3 {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+
+    /* --- Section 3: 전통상차림 --- */
+    .tfood_container {
+        display: block;
+    }
+
+    /* 모바일에서는 서브 카드들 숨김 */
+    .sub_card_grid {
+        display: none;
+    }
+
+    .main_card img {
+        height: 300px;
+        border-radius: 12px;
+    }
+
+    .main_card .card_text {
+        padding: 16px;
+    }
+
+    .main_card h3 {
+        font-size: 15px;
+    }
+
+    .main_card p {
+        font-size: 12px;
+    }
+
+    /* --- Section 4: 향토&지역음식 (가로 스크롤 형태) --- */
+    .hfood_box_grid {
+        display: flex; /* 가로 스크롤로 변경 */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hfood_box_grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .boxitem {
+        flex: 0 0 75%; /* 화면의 75% 지정 */
+        scroll-snap-align: start;
+    }
+
+    .hfood_box_grid .boxitem:nth-child(n+3) {
+        display: flex; /* 가로 스크롤을 위해 모바일에서 노출 유지 */
+    }
+
+    .boxitem .img_box {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .item_info h4 {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    .item_info p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* --- Footer --- */
+    footer {
+        padding: 20px 0 30px;
+        margin-top: 24px;
+    }
+
+    .footer_nav ul {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .footer_nav a {
+        font-size: 11px;
+    }
+
+    .company_info p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .escrow_logo {
+        display: none; /* 최하단 인증 마크 모바일 숨김 (선택사항) */
+    }
+}
