@@ -661,7 +661,7 @@ footer {
 
     .video_card h3 {
         font-size: 18px;
-        font-width: 900;
+        font-weight: 900;
         margin-bottom: 0;
         text-align: center;
         margin-bottom: 136px;
@@ -669,7 +669,7 @@ footer {
 
     /* --- Section 3: 전통상차림 (좌우 2열 -> 상하 1열) --- */
     .tfood_container {
-        grid-template-columns:1, 1.2fr;
+        grid-template-columns:1fr 1.2fr;
         gap: 16px;
     }
 
@@ -988,4 +988,15 @@ footer {
     .escrow_logo {
         display: none; /* 최하단 인증 마크 모바일 숨김 (선택사항) */
     }
+}
+
+/* 접근성을 지키며 화면에서만 숨기는 클래스 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

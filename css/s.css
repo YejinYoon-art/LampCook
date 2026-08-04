@@ -1,0 +1,675 @@
+/* 미디어전부 상세하게 수정(검색아이콘이아니라 새로고침 아이콘이랑 헤더에도 아이콘빠짐) 제이쿼리해야됨  */
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* ==========================================
+   1. Reset & Common Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ==========================================
+   2. Header
+   ========================================== */
+.header_top {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_top > div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    width: 280px;
+    background-color: #EEEEEE;
+    border-radius: 4px;
+}
+
+.search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.user_nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.user_nav a {
+    font-size: 14px;
+    color: #666;
+}
+
+.header_bottom {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.all_menu_btn {
+    font-size: 20px;
+    margin-right: 25px;
+}
+
+.main_nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main_nav a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.main_nav a:hover {
+    color: #31CD32;
+}
+
+/* ==========================================
+   3. Main & Map Layout (핵심!)
+   ========================================== */
+main {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 120px); /* 헤더 제외 높이 전체 채움 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 왼쪽 사이드바 영역 */
+main section {
+    width: 487px;
+    min-width: 487px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 5;
+}
+
+.box {
+    padding: 0 20px;
+}
+
+/* 카테고리 버튼 검색바 */
+.search_i {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 100%;             
+    height: 40px;            
+    padding: 0 14px;        
+    margin-bottom: 16px;     
+    background-color: #f2f2f2; /
+    border-radius: 4px;      
+}
+
+.search_i input {
+    width: 100%;            
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+}
+
+.search_i button {
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    padding-left: 8px;     
+    flex-shrink: 0;         
+}
+
+.searchbox {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchbox a {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #EEEEEE;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: block;
+}
+
+.food_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.food_title h2 {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+/* 음식 리스트 및 카드 (이미지 좌측, 텍스트 우측) */
+.foodbox {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.foodbox > a {
+    display: block;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.foodboxin {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+}
+
+.foodbox img {
+    width: 288px;
+    height: 201px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.foodbox h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.foodbox p {
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.foodbox span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffa500;
+}
+.foodbox span .pp{
+    color: #666;
+   font-weight: 400;
+}
+
+/* 오른쪽 지도 영역 */
+.map {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 지도 위 상단 카테고리 (음식점, 카페, 공유) 플로팅 */
+.fo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 30px;
+
+}
+
+.fo .name_box a, 
+.fo .name-box a {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.fo .name_box a {
+    background-color: #31CD32;
+    color: #fff;
+}
+/* ////////////////////////// */
+/* 미디어쿼리 태블릿 */
+/* ==========================================
+   8. Tablet Responsive Styles (768px 이하)
+   ========================================== */
+@media screen and (max-width: 768px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    header > .header_top{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom > button{
+        margin-right: unset;
+    }
+
+    /* --- 공통 요소 및 여백 재설정 --- */
+    section {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 20px;
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+        margin-bottom: 136px; /* PC의 288px 여백을 현실적인 모바일/태블릿 여백으로 조정 */
+    }
+
+    .cta_btn {
+        width: 100%; /* 버튼이 너비를 채우도록 설정 */
+        padding: 14px 0;
+        font-size: 16px;
+    }
+
+    /* --- Header --- */
+    .header_top {
+        padding: 12px 16px;
+    }
+
+    .search, 
+    .user_nav {
+        display: none; /* 검색바 및 상단 로그인 메뉴 숨김 */
+    }
+
+    .header_bottom {
+        justify-content: space-between;
+        padding: 0 16px;
+        height: auto;
+    }
+
+    .main_nav {
+        display: none; /* GNB 네비게이션 숨김 (필요시 모바일 메뉴 드로어로 구현) */
+    }
+    .all_menu_btn{
+        display: block;
+    }
+    /* //////////// */
+    /* 사이드바 */
+
+    
+    /* /////////////////////////////////////////// */
+    main{
+        height: calc(100vh - 60px);
+    }
+    main section{
+        width: 310px;
+        min-width: 310px;
+    }
+    .box{
+        padding: 0 12px;
+    }
+    .searchbox{
+        gap: 4px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    .searchbox a {
+        font-size: 13px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        text-align: center;
+    }
+    .food_title h2{
+        font-size:16px ;
+    }
+    .foodboxin{
+        gap: 10px;
+    }
+    .foodbox > a {
+        padding-bottom: 12px;
+    }
+    .foodboxin {
+        gap: 10px
+    }
+    .foodbox img {
+        width: 140px;         
+        height: 95px;            
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
+    .foodbox h3 {
+        font-size: 15px;
+        margin-bottom: 2px;
+    } 
+    .foodbox p {
+        font-size: 11px;        
+        color: #666;
+        margin-bottom: 4px;
+        line-height: 1.25;
+    }
+    .foodbox span {
+        font-size: 11px;
+    }
+    .fo {
+        top: 12px;
+        left: 12px;
+        gap: 6px;
+    }
+    .fo .name_box a, 
+    .fo .name-box a {
+        padding: 4px 12px;
+        font-size: 12px;        
+        border-radius: 16px;
+    }
+}
+
+
+
+
+
+
+/* 미디어쿼리 모바일 */
+@media screen and (max-width: 360px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    header > .header_top{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom{
+        padding: unset;
+        margin: unset;
+    }
+    header > .header_bottom > button{
+        margin-right: unset;
+    }
+
+
+
+    /* --- 공통 요소 및 여백 재설정 --- */
+    section {
+        margin: 0px 0;
+        padding: 0 0px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 15px;
+
+    }
+
+    /* 제목 우측 화살표 링크 아이콘 연출 */
+    .section_title h2::after,
+    .section_title_wrap h2::after {
+        content: ' >';
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+    }
+
+    /* 모바일 시안에서 하단 초록색 버튼 숨김 */
+    .btn_wrap {
+        display: none;
+    }
+
+    /* --- Header --- */
+
+    .logo img {
+        height: 32px; /* 모바일 로고 크기 축소 */
+        width: auto;
+  
+    }
+
+    /* 1. 메인 영역 세로(Top - Bottom) 정렬로 변경 */
+    main {
+        display: flex;
+        flex-direction: column;      /* 💡 좌우 배치 -> 위아래 세로 배치로 변경 */
+        width: 100%;
+        height: auto;                 /* 화면 세로 스크롤 가능하도록 설정 */
+        overflow-y: visible;          /* 전체 스크롤 허용 */
+    }
+
+    /* 2. 지도 영역 (상단 배치) */
+    .map {
+        width: 100%;
+        height: 360px;                /* 상단 지도 고정 높이 */
+        position: relative;
+        order: 1;                     /* 상단에 위치 */
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 3. 지도 위 (음식점 / 카페 / 공유) 플로팅 버튼 */
+    .fo {
+        top: 10px;
+        left: 10px;
+        gap: 6px;
+    }
+
+    .fo .name_box a, 
+    .fo .name-box a {
+        padding: 4px 10px;
+        font-size: 11px;              /* 모바일용 버튼 폰트 축소 */
+        border-radius: 12px;
+    }
+
+    /* 4. 리스트 영역 (하단 배치) */
+    main section {
+        width: 100%;                  /* 화면 너비 100% 꽉 차게 */
+        min-width: 100%;
+        height: auto;
+        overflow-y: visible;
+        border-right: none;
+        order: 2;                     /* 지도 아래로 위치 지정 */
+        background-color: #fff;
+    }
+
+    .box {
+        padding: 16px 12px;           /* 안쪽 여백 축소 */
+    }
+
+    /* 5. 카테고리 탭 (팔도향토음식 / 현지 맛집/노포 / 식재료지도) */
+    .searchbox {
+        display: flex;
+        justify-content: space-between;
+        gap: 4px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .searchbox li {
+        flex: 1; 
+    }
+
+    
+    .searchbox a {
+        font-size: 11px;              /* 360px 화면에 맞춰 글자 축소 */
+        padding: 6px 0;
+        text-align: center;
+        border-radius: 4px;
+    }
+
+    /* 6. 타이틀 (대구) */
+    .food_title {
+        margin-bottom: 12px;
+    }
+
+    .food_title h2 {
+        font-size: 18px;
+    }
+
+    /* 7. 음식 카드 리스트 (시안 이미지 비율 적용) */
+    .foodbox {
+        gap: 12px;
+    }
+
+    .foodbox > a {
+        padding-bottom: 12px;
+    }
+
+    .foodboxin {
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* 모바일 이미지 크기 (시안과 동일 비율) */
+    .foodbox img {
+        width: 130px;                 /* 이미지 폭 */
+        height: 85px;                 /* 이미지 높이 */
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    /* 우측 텍스트 영역 */
+    .foodbox h3 {
+        font-size: 14px;              /* 식당 이름 크기 */
+        font-weight: 700;
+        margin-bottom: 2px;
+    }
+
+    .foodbox p {
+        font-size: 10px;              /* 설명글 크기 */
+        color: #666;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+
+    .foodbox span {
+        font-size: 10px;
+    }
+}
+
+
+
+

@@ -204,6 +204,7 @@ button {
     display: flex;
     align-items: center;
     height: 50px;
+    margin-bottom: 48px;
 }
 
 .all_menu_btn {
@@ -265,4 +266,8 @@ section .searchbox a{
     font-width: 900;
     font-size:25px ;
 }
-.food .foodbox .foodboxin 
+.foodbox img{
+    width: 288px;
+    height: 201px;
+    border-radius: 16px;
+}

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LampCook - 램프쿡</title>
-    <link rel="stylesheet" href="../css/m_stylemap.css">
+    <title>LampCook - 램프쿡지도</title>
+    <link rel="stylesheet" href="../css/s.css">
     <script src="https://kit.fontawesome.com/ea782db7d4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -56,11 +56,11 @@
     <!-- //header -->
     <main>
         <section>
-            <sub>
+            <div class="sidebar">
                 <div class="box">
-                    <div class="search">
+                    <div class="search_i">
                         <input type="text" placeholder="검색어를 입력하세요">
-                        <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="button"><i class="fa-solid fa-rotate-right" style="color: rgb(0, 0, 0);"></i></button>
                     </div>
                     <nav>
                         <ul class="searchbox">
@@ -70,52 +70,73 @@
                         </ul>
                     </nav>
                     <div class="food">
-                        <h2>대구</h2>
-                        <!-- 햄버거바 -->
+                        <div class="food_title">
+                            <h2>대구</h2>
+                            <a href="#">
+                                <i class="fa-solid fa-sliders" style="color: rgb(0, 0, 0);"></i>
+                            </a>
+
+                        </div>
                         <div class="foodbox">
                             <a href="#">
                                 <div class="foodboxin">
                                     <img src="../img/big.jpg" alt="왕거미식당">
-                                    <h3>왕거미식당</h3>
-                                    <p>뭉티기(생고기) 전문점
-                                        신선한 한우 특수부위</p>
-                                    <span>⭐4.43 리뷰3,361 </span>
+                                    <div class="text_box">
+                                        <h3>왕거미식당</h3>
+                                        <p>뭉티기(생고기) 전문점<br>
+                                            신선한 한우 특수부위</p>
+                                        <span>⭐4.43 <span class="pp">리뷰3,361</span> </span>
+                                    </div>
                                 </div>
                             </a>
+
                             <a href="#">
-                                <div class="foodbox">
+                                <div class="foodboxin">
                                     <img src="../img/xotks.jpg" alt="태산만두">
-                                    <h3>태산만두</h3>
-                                    <p>대구 중구의 대표적인
-                                        만두 전문점</p>
-                                    <span>⭐3.95 리뷰5,852 </span>
+                                    <div class="text_box">
+                                        <h3>태산만두</h3>
+                                        <p>대구 중구의 대표적인
+                                            만두 전문점</p>
+                                        <span>⭐3.95 <span class="pp">리뷰5,852</span> </span>
+                                    </div>
                                 </div>
                             </a>
                             <a href="#">
-                                <div class="foodbox">
+                                <div class="foodboxin">
                                     <img src="../img/tkathd.jpg" alt="삼송빵집">
-                                    <h3>삼송빵집</h3>
-                                    <p>통옥수수빵과 
-                                        고추 고로케 등 다양한 메뉴</p>
-                                    <span>⭐4.21 리뷰8,161 </span>
+                                    <div class="text_box">
+                                        <h3>삼송빵집</h3>
+                                        <p>통옥수수빵과 
+                                            고추 고로케 등 다양한 메뉴</p>
+                                        <span>⭐4.21 <span class="pp">리뷰8,161</span> </span>
+                                    </div>
                                 </div>
                             </a>
                             <a href="#">
-                                <div class="foodbox">
+                                <div class="foodboxin">
                                     <img src="../img/alwls.jpg" alt="미진분식">
-                                    <h3>미진분식</h3>
-                                    <p>대구의 오래된 전통 분식</p>
-                                    <span>⭐3.8 리뷰16,268</span>
+                                    <div class="text_box">
+                                        <h3>미진분식</h3>
+                                        <p>대구의 오래된 전통 분식</p>
+                                        <span>⭐3.8 <span class="pp">리뷰16,268</span></span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                     </div>
             </sub>
         </section>
+        <!-- 지도 부분 -->
         <div class="map">
+            <!-- 지도위 공유버튼 -->
+             <div class="fo">
+            <div class="name_box"><a href="#">음식점</a></div>
+            <div class="name-box"><a href="#">카페</a></div>
+            <div class="name-box"><a href="#">공유</a></div>
+        </div>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3565e3d2116a5265%3A0x6abc4d3c164a570!2z7JmV6rGw66-47Iud64u5!5e0!3m2!1sko!2skr!4v1785482489405!5m2!1sko!2skr"
-                width="1434px" height="851px" style="border:0;" allowfullscreen="" loading="lazy"
+                width="100%" height="851px" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </main>
