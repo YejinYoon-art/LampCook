@@ -1,4 +1,4 @@
-/* 미디어전부 상세하게 수정(검색아이콘이아니라 새로고침 아이콘이랑 헤더에도 아이콘빠짐) 제이쿼리해야됨  */
+
 @charset "UTF-8";
 @font-face {
     font-family: 'Pretendard';
@@ -179,12 +179,12 @@ button {
 main {
     display: flex;
     width: 100%;
-    height: calc(100vh - 120px); /* 헤더 제외 높이 전체 채움 */
+    height: calc(100vh - 120px); 
     position: relative;
     overflow: hidden;
 }
 
-/* 왼쪽 사이드바 영역 */
+
 main section {
     width: 487px;
     min-width: 487px;
@@ -198,7 +198,7 @@ main section {
     padding: 0 20px;
 }
 
-/* 카테고리 버튼 검색바 */
+
 .search_i {
     display: flex;
     align-items: center;
@@ -259,7 +259,7 @@ main section {
     font-weight: 900;
 }
 
-/* 음식 리스트 및 카드 (이미지 좌측, 텍스트 우측) */
+
 .foodbox {
     display: flex;
     flex-direction: column;
@@ -310,7 +310,7 @@ main section {
    font-weight: 400;
 }
 
-/* 오른쪽 지도 영역 */
+
 .map {
     flex-grow: 1;
     height: 100%;
@@ -322,7 +322,6 @@ main section {
     height: 100%;
 }
 
-/* 지도 위 상단 카테고리 (음식점, 카페, 공유) 플로팅 */
 .fo {
     position: absolute;
     top: 20px;
@@ -374,7 +373,7 @@ main section {
         margin-right: unset;
     }
 
-    /* --- 공통 요소 및 여백 재설정 --- */
+  
     section {
         margin: 40px auto;
         padding: 0 16px;
@@ -387,11 +386,11 @@ main section {
 
     .btn_wrap {
         margin-top: 40px;
-        margin-bottom: 136px; /* PC의 288px 여백을 현실적인 모바일/태블릿 여백으로 조정 */
+        margin-bottom: 136px; 
     }
 
     .cta_btn {
-        width: 100%; /* 버튼이 너비를 채우도록 설정 */
+        width: 100%; 
         padding: 14px 0;
         font-size: 16px;
     }
@@ -403,7 +402,7 @@ main section {
 
     .search, 
     .user_nav {
-        display: none; /* 검색바 및 상단 로그인 메뉴 숨김 */
+        display: none; 
     }
 
     .header_bottom {
@@ -413,7 +412,7 @@ main section {
     }
 
     .main_nav {
-        display: none; /* GNB 네비게이션 숨김 (필요시 모바일 메뉴 드로어로 구현) */
+        display: none; 
     }
     .all_menu_btn{
         display: block;
@@ -512,9 +511,6 @@ main section {
         margin-right: unset;
     }
 
-
-
-    /* --- 공통 요소 및 여백 재설정 --- */
     section {
         margin: 0px 0;
         padding: 0 0px;
@@ -526,7 +522,7 @@ main section {
 
     }
 
-    /* 제목 우측 화살표 링크 아이콘 연출 */
+  
     .section_title h2::after,
     .section_title_wrap h2::after {
         content: ' >';
@@ -535,7 +531,6 @@ main section {
         font-weight: 400;
     }
 
-    /* 모바일 시안에서 하단 초록색 버튼 숨김 */
     .btn_wrap {
         display: none;
     }
@@ -543,34 +538,28 @@ main section {
     /* --- Header --- */
 
     .logo img {
-        height: 32px; /* 모바일 로고 크기 축소 */
+        height: 32px; 
         width: auto;
   
     }
-
-    /* 1. 메인 영역 세로(Top - Bottom) 정렬로 변경 */
     main {
         display: flex;
-        flex-direction: column;      /* 💡 좌우 배치 -> 위아래 세로 배치로 변경 */
+        flex-direction: column;      
         width: 100%;
-        height: auto;                 /* 화면 세로 스크롤 가능하도록 설정 */
-        overflow-y: visible;          /* 전체 스크롤 허용 */
+        height: auto;                 
+        overflow-y: visible;          
     }
-
-    /* 2. 지도 영역 (상단 배치) */
     .map {
         width: 100%;
-        height: 360px;                /* 상단 지도 고정 높이 */
+        height: 360px;               
         position: relative;
-        order: 1;                     /* 상단에 위치 */
+        order: 1;                     
     }
 
     .map iframe {
         width: 100%;
         height: 100%;
     }
-
-    /* 3. 지도 위 (음식점 / 카페 / 공유) 플로팅 버튼 */
     .fo {
         top: 10px;
         left: 10px;
@@ -580,26 +569,25 @@ main section {
     .fo .name_box a, 
     .fo .name-box a {
         padding: 4px 10px;
-        font-size: 11px;              /* 모바일용 버튼 폰트 축소 */
+        font-size: 11px;              
         border-radius: 12px;
     }
 
     /* 4. 리스트 영역 (하단 배치) */
     main section {
-        width: 100%;                  /* 화면 너비 100% 꽉 차게 */
+        width: 100%;                
         min-width: 100%;
         height: auto;
         overflow-y: visible;
         border-right: none;
-        order: 2;                     /* 지도 아래로 위치 지정 */
+        order: 2;                    
         background-color: #fff;
     }
 
     .box {
-        padding: 16px 12px;           /* 안쪽 여백 축소 */
+        padding: 16px 12px;          
     }
 
-    /* 5. 카테고리 탭 (팔도향토음식 / 현지 맛집/노포 / 식재료지도) */
     .searchbox {
         display: flex;
         justify-content: space-between;
@@ -614,13 +602,11 @@ main section {
 
     
     .searchbox a {
-        font-size: 11px;              /* 360px 화면에 맞춰 글자 축소 */
+        font-size: 11px;             
         padding: 6px 0;
         text-align: center;
         border-radius: 4px;
     }
-
-    /* 6. 타이틀 (대구) */
     .food_title {
         margin-bottom: 12px;
     }
@@ -629,7 +615,6 @@ main section {
         font-size: 18px;
     }
 
-    /* 7. 음식 카드 리스트 (시안 이미지 비율 적용) */
     .foodbox {
         gap: 12px;
     }
@@ -643,23 +628,23 @@ main section {
         align-items: center;
     }
 
-    /* 모바일 이미지 크기 (시안과 동일 비율) */
+    
     .foodbox img {
-        width: 130px;                 /* 이미지 폭 */
-        height: 85px;                 /* 이미지 높이 */
+        width: 130px;                
+        height: 85px;                
         border-radius: 8px;
         flex-shrink: 0;
     }
 
-    /* 우측 텍스트 영역 */
+  
     .foodbox h3 {
-        font-size: 14px;              /* 식당 이름 크기 */
+        font-size: 14px;              
         font-weight: 700;
         margin-bottom: 2px;
     }
 
     .foodbox p {
-        font-size: 10px;              /* 설명글 크기 */
+        font-size: 10px;            
         color: #666;
         line-height: 1.3;
         margin-bottom: 4px;

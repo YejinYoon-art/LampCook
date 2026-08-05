@@ -161,6 +161,56 @@ button {
     gap: 16px;
 }
 
+/* 카테고리 */
+.header nav > ul {
+    display: flex;
+    position: relative;
+}
+
+.header nav > ul li {
+    width: 130px;
+    text-align: center;
+    height: 64px;
+    line-height: 64px;
+    font-weight: 400;
+}
+
+header nav ul a {
+    display: block;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header nav > ul > li.on > a,
+header nav > ul > li:hover > a {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header nav ul.depth_2 {
+    height: 0;
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+header nav ul.depth_2 li {
+    height: 50px;
+    line-height: 50px;
+}
+
+header nav ul li:hover > .depth_2 {
+    height: 200px;
+}
+
+header nav ul.depth_2 li:hover > a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
 /* 검색바 */
 .search {
     display: flex;
@@ -228,19 +278,11 @@ button {
 }
 
 /* ==========================================
-   3. Sub Banner (서브페이지 상단 배너)
+   3. Sub Banner
    ========================================== */
-/* .sub_banner {
-    max-width: 1440px;
-    margin: 20px auto 60px;
-    padding: 0 20px;
-    position: relative;
-} */
-
 .sub_banner .banner_img {
     position: relative;
     width: 100%;
-    /* border-radius: 12px; */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -333,7 +375,7 @@ button {
     object-fit: cover;
 }
 
-/* 3. 뉴스소식 (다크 섹션) */
+/* 3. 뉴스소식 */
 .news_section {
     background-color: #0d0d0d;
     color: #ffffff;
@@ -493,23 +535,23 @@ footer {
 }
 
 /* ==========================================
-   6. Media Query - Tablet (max-width: 767px)
+   6. Media Query - Tablet & Mobile (max-width: 767px)
    ========================================== */
 @media screen and (max-width: 767px) {
-     header{
+    header {
         display: flex;
         justify-content: space-between;
         padding: 0 12px;
     }
-    header > .header_top{
+    header > .header_top {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom{
+    header > .header_bottom {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom > button{
+    header > .header_bottom > button {
         margin-right: unset;
     }
 
@@ -533,14 +575,14 @@ footer {
         font-size: 16px;
     }
 
-     /* --- Header --- */
+    /* --- Header --- */
     .header_top {
         padding: 12px 16px;
     }
 
     .search, 
     .user_nav {
-        display: none; /* 검색바 및 상단 로그인 메뉴 숨김 */
+        display: none;
     }
 
     .header_bottom {
@@ -550,14 +592,13 @@ footer {
     }
 
     .main_nav {
-        display: none; /* GNB 네비게이션 숨김 (필요시 모바일 메뉴 드로어로 구현) */
+        display: none;
     }
-    .all_menu_btn{
+    
+    .all_menu_btn {
         display: block;
     }
 
-
-    
     /* 3. Sub Banner */
     .sub_banner {
         margin: 10px auto 30px;
@@ -568,15 +609,19 @@ footer {
         font-size: 24px;
     }
 
-    /* 4. Main Content Sections (1열 전환) */
+    /* 4. Main Content Sections */
     .info_section {
         margin: 40px auto;
         padding: 0 16px;
     }
 
     .info_section .container {
-        grid-template-columns: 1fr; /* 2열 -> 1열 변경 */
+        grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .history_section .img_box {
+        display: none; 
     }
 
     /* 역사 & 우희열 대표 섹션 */
@@ -605,42 +650,52 @@ footer {
     .news_section .section_title h2 {
         font-size: 22px;
         margin-bottom: 20px;
-        
     }
 
     .news_banner_box {
-        grid-template-columns: 1fr; /* 1열 변경 */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .news_text h3 {
         font-size: 20px;
         margin-bottom: 10px;
-        
     }
 
     .news_text p {
-       display: none;
+        display: none;
     }
-
-    /* 6. Product Section (2열 배치) */
     .product_section {
         margin: 50px auto;
         padding: 0 16px;
     }
 
     .product_grid {
-        grid-template-columns: repeat(2, 1fr); /* 4열 -> 2열 변경 */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px 12px;
     }
 
+    .product_card {
+        width: 100%;
+    }
+
     .product_card .img_wrap {
+        width: 100%;
         height: 200px;
         margin-bottom: 8px;
     }
 
+    .product_card .img_wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
     .product_card span {
+        display: block;
         font-size: 14px;
+        text-align: center;
     }
 
     /* --- Footer --- */
@@ -661,39 +716,37 @@ footer {
     }
 
     .escrow_logo {
-        align-self: flex-end; /* 에스크로 로고 우측 정렬 */
+        align-self: flex-end;
     }
 }
 
-
-/* ////////////////////////// */
-/* 미디어쿼리 모바일 */
-
-
-
-@media screen and(max-width:360px){
-    header{
+/* ==========================================
+   7. Media Query - Mobile Small (max-width: 360px)
+   ========================================== */
+@media screen and (max-width: 360px) {
+    header {
         display: flex;
         justify-content: space-between;
         padding: 0 12px;
     }
-    header > .header_top{
+    header > .header_top {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom{
+    header > .header_bottom {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom > button{
+    header > .header_bottom > button {
         margin-right: unset;
     }
 
-
-
-   /* 1. 공통 여백 및 타이틀 조정 */
+    /* 1. 공통 여백 및 타이틀 조정 */
     .container {
         padding: 0 12px;
+    }
+    .sub_banner {
+        padding: 0;
     }
 
     .section_title {
@@ -716,12 +769,10 @@ footer {
         border-radius: 6px;
     }
 
-     /* --- Header --- */
-
+    /* --- Header --- */
     .logo img {
-        height: 32px; /* 모바일 로고 크기 축소 */
+        height: 32px;
         width: auto;
-  
     }
 
     /* --- Main Banner --- */
@@ -731,11 +782,9 @@ footer {
     }
 
     .slider_container img {
-        height: 313px; /* 모바일 전용 슬라이드 높이 */
-        
+        height: 313px;
         border-radius: 8px;
     }
-
     .slider_dots {
         margin-top: 10px;
     }
@@ -750,9 +799,55 @@ footer {
     }
 
     main > section > .section_title,
-    .section_title_wrap{
+    .section_title_wrap {
         margin-bottom: 4px;
     }
+
+    .product_section {
+        margin: 30px auto;
+        padding: 0 12px;
+    }
+
+    .product_grid {
+        display: flex;                
+        gap: 12px;                      
+        overflow-x: auto;               
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
    
-    
+    .product_grid::-webkit-scrollbar {
+        display: none;
+    }
+    .product_grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .product_card {
+        flex: 0 0 140px;           
+        scroll-snap-align: start;
+    }
+
+    .product_card .img_wrap {
+        width: 100%;
+        height: 150px;                  
+        margin-bottom: 6px;
+    }
+
+    .product_card .img_wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .product_card span {
+        display: block;
+        font-size: 13px;
+        text-align: center;
+        white-space: nowrap;      
+        overflow: hidden;
+        text-overflow: ellipsis;      
+    }
 }
