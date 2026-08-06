@@ -1,0 +1,1051 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* ==========================================
+   1. Reset & Common Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* 공통 컨테이너 및 버튼 */
+section {
+    max-width: 1440px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section_title {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.section_title h2 {
+    font-size: 31px;
+    font-weight: 700;
+    color: #111;
+}
+
+.btn_wrap {
+    text-align: center;
+    margin-top: 88px;
+    margin-bottom: 288px;
+}
+
+.cta_btn {
+    display: inline-block;
+    padding: 10px 200px;
+    background-color: #31CD32; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.cta_btn:hover {
+    background-color: #28b029;
+}
+
+/* ==========================================
+   2. Header & Navigation (수정완료)
+   ========================================== */
+header {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.header_top {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 검색바 */
+.search {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    width: 320px;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+}
+
+.search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.search button {
+    color: #777;
+    font-size: 14px;
+}
+
+/* 상단 유저 메뉴 */
+.user_nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+.user_nav a {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 메인 네비게이션 (GNB) */
+.header_bottom {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.all_menu_btn {
+    font-size: 20px;
+    margin-right: 30px;
+    color: #333;
+}
+
+.main_nav {
+    height: 100%;
+}
+
+.main_nav > .nav_text {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+    align-items: center;
+}
+
+/* 1차 메뉴 */
+.main_nav > .nav_text > li {
+    position: relative; /* depth_2 띄우기 기준점 */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main_nav > .nav_text > li > a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.main_nav > .nav_text > li > a:hover {
+    color: #31CD32;
+}
+
+/* 2차 서브메뉴 (세로 정렬 고정) */
+.main_nav .depth_2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 160px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.main_nav .depth_2 li {
+    width: 100%;
+}
+
+.main_nav .depth_2 li a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.main_nav .depth_2 li a:hover {
+    background-color: #f5f5f5;
+    color: #31CD32;
+}
+
+/* ==========================================
+   스크롤 버튼
+   ========================================== */
+.btn_gotop {
+    position: fixed;
+    bottom: 35px;
+    right: 66px;
+    width: 63px;
+    height: 63px;
+    z-index: 9999999;
+    outline: none;
+    background-color: #31CD32;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bth_gobown {
+    font-size: 24px;
+}
+
+/* ==========================================
+   3. Main Banner (Slider)
+   ========================================== */
+.main_banner {
+    max-width: 1440px;
+    margin: 40px auto 240px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.slider_container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.slider_container img {
+    width: 100%;
+    height: 590px;
+    object-fit: contain;
+}
+
+.slider_dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #31CD32;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   4. Section 1: 이달의 전통식품
+   ========================================== */
+.card_grid_3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card_grid_3 .card {
+    display: block;
+    background: #fff;
+}
+
+.card_grid_3 .img_box {
+    width: 100%;
+    height: 504px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.card_grid_3 .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card_grid_3 .card:hover .img_box img {
+    transform: scale(1.04);
+}
+
+.card_grid_3 h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+.card_grid_3 span {
+    font-size: 16px;
+    color: #777;
+}
+
+/* ==========================================
+   5. Section 2: K-푸드트렌드
+   ========================================== */
+.section_title_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section_title_wrap h2 {
+    font-size: 31px;
+    font-weight: 700;
+    color: #111;
+}
+
+.sns_links {
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+    color: #666;
+}
+
+.video_grid_2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.video_container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+.video_container video {
+    width: 100%;
+    height: 393px;
+    object-fit: cover;
+    display: block;
+}
+
+.video_card h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 288px;
+}
+
+/* ==========================================
+   6. Section 3: 전통상차림
+   ========================================== */
+.tfood_container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 27px;
+}
+
+.main_card a {
+    position: relative; 
+    display: block;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.main_card img {
+    width: 100%;
+    height: 627px; 
+    min-height: 380px;
+    object-fit: cover;
+}
+
+.main_card .card_text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #ffffff;
+}
+
+.main_card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.main_card p {
+    font-size: 15px;
+    color: #dddddd;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sub_card_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.sub_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub_card img {
+    width: 100%;
+    height: 261px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sub_card span {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.sub_card b {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   7. Section 4: 향토&지역요리
+   ========================================== */
+.hfood_box_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 76px 24px;
+}
+
+.boxitem {
+    display: flex;
+    flex-direction: column;
+}
+
+.boxitem .img_box {
+    width: 100%;
+    height: 381px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.boxitem .img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item_info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+}
+
+.item_info p {
+    font-size: 17px;
+    color: #888;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    border-top: 1px solid #e7e7e7;
+    padding: 30px 0 50px;
+    margin-top: 80px;
+}
+
+.footer_nav {
+    max-width: 1440px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+.footer_nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.footer_nav a {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+.footer_content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.company_info p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.company_info .copyright {
+    margin-top: 10px;
+    color: #999;
+}
+
+.escrow_logo img {
+    height: 40px;
+}
+
+/* ==========================================
+   8. Tablet Responsive Styles (768px 이하)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+
+    header > .header_top {
+        padding: unset;
+        margin: unset;
+    }
+
+    header > .header_bottom {
+        padding: unset;
+        margin: unset;
+    }
+
+    header > .header_bottom > button {
+        margin-right: unset;
+    }
+
+    section {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 20px;
+    }
+
+    .btn_wrap {
+        margin-top: 40px;
+        margin-bottom: 136px;
+    }
+
+    .cta_btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 16px;
+    }
+
+    .header_top {
+        padding: 12px 16px;
+    }
+
+    .search, 
+    .user_nav {
+        display: none;
+    }
+
+    .header_bottom {
+        justify-content: space-between;
+        padding: 0 16px;
+        height: auto;
+    }
+
+    .main_nav {
+        display: none;
+    }
+
+    .all_menu_btn {
+        display: block;
+    }
+
+    .main_banner {
+        margin: 20px auto 136px;
+        padding: 0 16px;
+    }
+
+    .slider_container img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .card_grid_3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .card_grid_3 .img_box {
+        height: 344px;
+    }
+
+    .card_grid_3 h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .card_grid_3 span {
+        font-size: 14px;
+    }
+
+    .card_grid_3 .card:nth-child(3) {
+        display: none;
+    }
+
+    .sns_links {
+        display: none;
+    }
+
+    .video_grid_2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .video_card:nth-child(2) {
+        display: none;
+    }
+
+    .video_container video {
+        height: 378px;
+    }
+
+    .video_card h3 {
+        font-size: 18px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 136px;
+    }
+
+    .tfood_container {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 16px;
+    }
+
+    .main_card img {
+        height: 240px;
+        min-height: auto;
+    }
+
+    .main_card h3 {
+        font-size: 16px;
+    }
+
+    .main_card p {
+        font-size: 13px;
+    }
+
+    .sub_card_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        width: 360px;
+    }
+
+    .sub_card_grid .sub_card:nth-child(3),
+    .sub_card_grid .sub_card:nth-child(4) {
+        display: none;
+    }
+
+    .sub_card img {
+        height: 140px;
+    }
+
+    .sub_card span {
+        font-size: 13px;
+    }
+
+    .sub_card b {
+        font-size: 14px;
+    }
+
+    .hfood_box_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+    }
+
+    .boxitem .img_box {
+        height: 373px;
+    }
+
+    .item_info h3 {
+        font-size: 16px;
+    }
+
+    .item_info p {
+        font-size: 13px;
+    }
+
+    .hfood_box_grid .boxitem:nth-child(n+7) {
+        display: none;
+    }
+
+    footer {
+        padding: 30px 0;
+        margin-top: 40px;
+    }
+
+    .footer_nav ul {
+        flex-wrap: wrap;
+        gap: 10px 15px;
+    }
+
+    .footer_content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .escrow_logo {
+        align-self: flex-end;
+    }
+}
+
+/* ==========================================
+   9. Mobile Responsive Styles (360px 이하)
+   ========================================== */
+@media screen and (max-width: 360px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+
+    header > .header_top {
+        padding: unset;
+        margin: unset;
+    }
+
+    header > .header_bottom {
+        padding: unset;
+        margin: unset;
+    }
+
+    header > .header_bottom > button {
+        margin-right: unset;
+    }
+
+    section {
+        margin: 28px auto;
+        padding: 0 16px;
+    }
+
+    .section_title h2,
+    .section_title_wrap h2 {
+        font-size: 15px;
+    }
+
+    .section_title h2::after,
+    .section_title_wrap h2::after {
+        content: ' >';
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+    }
+
+    .btn_wrap {
+        display: none;
+    }
+
+    .logo img {
+        height: 32px;
+        width: auto;
+    }
+
+    .main_banner {
+        margin: 10px auto 24px;
+        padding: 0 12px;
+    }
+
+    .slider_container img {
+        height: 313px;
+        border-radius: 8px;
+    }
+
+    .slider_dots {
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot.active {
+        width: 14px;
+    }
+
+    main > section > .section_title,
+    .section_title_wrap {
+        margin-bottom: 4px;
+    }
+
+    .card_grid_3 {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .card_grid_3::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card_grid_3 .card {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+    }
+
+    .card_grid_3 .card:nth-child(3) {
+        display: block;
+    }
+
+    .card_grid_3 .img_box {
+        height: 263px;
+        border-radius: 12px;
+    }
+
+    .card_grid_3 h3 {
+        font-size: 13px;
+        margin-top: 8px;
+        margin-bottom: 2px;
+    }
+
+    .card_grid_3 span {
+        font-size: 11px;
+    }
+
+    .video_container video {
+        height: 190px;
+        border-radius: 8px;
+    }
+
+    .video_card h3 {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+
+    .tfood_container {
+        display: block;
+    }
+
+    .sub_card_grid {
+        display: none;
+    }
+
+    .main_card img {
+        height: 300px;
+        border-radius: 12px;
+    }
+
+    .main_card .card_text {
+        padding: 16px;
+    }
+
+    .main_card h3 {
+        font-size: 15px;
+    }
+
+    .main_card p {
+        font-size: 12px;
+    }
+
+    .hfood_box_grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hfood_box_grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .boxitem {
+        flex: 0 0 75%;
+        scroll-snap-align: start;
+    }
+
+    .hfood_box_grid .boxitem:nth-child(n+3) {
+        display: flex;
+    }
+
+    .boxitem .img_box {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .item_info h3 {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    .item_info p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    footer {
+        padding: 20px 0 30px;
+        margin-top: 24px;
+    }
+
+    .footer_nav ul {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .footer_nav a {
+        font-size: 11px;
+    }
+
+    .company_info p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .escrow_logo {
+        display: none;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
