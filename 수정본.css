@@ -84,7 +84,9 @@ a {
     color: inherit;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -128,7 +130,7 @@ section {
 .cta_btn {
     display: inline-block;
     padding: 10px 200px;
-    background-color: #31CD32; 
+    background-color: #31CD32;
     color: #ffffff;
     font-size: 20px;
     font-weight: 300;
@@ -141,12 +143,8 @@ section {
 }
 
 /* ==========================================
-   2. Header & Navigation (수정완료)
+   2. Header
    ========================================== */
-header {
-    width: 100%;
-    background-color: #ffffff;
-}
 
 .header_top {
     max-width: 1440px;
@@ -157,20 +155,69 @@ header {
     justify-content: space-between;
 }
 
-.header_right {
+.header_top>div {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
+}
+
+/* 카테고리 */
+.header nav>ul {
+    display: flex;
+    position: relative;
+}
+
+.header nav>ul li {
+    width: 130px;
+    text-align: center;
+    height: 64px;
+    line-height: 64px;
+    font-weight: 400;
+}
+
+header nav ul a {
+    display: block;
+    color: #e3e3e3;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header nav>ul>li.on>a,
+header nav>ul>li:hover>a {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header nav ul.depth_2 {
+    height: 0;
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+header nav ul.depth_2 li {
+    height: 50px;
+    line-height: 50px;
+}
+
+header nav ul li:hover>.depth_2 {
+    height: 200px;
+}
+
+header nav ul.depth_2 li:hover>a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 /* 검색바 */
 .search {
     display: flex;
-    align-items: center;
-    padding: 8px 16px;
+    align-items: flex-end;
+    padding: 6px 16px;
     width: 320px;
     background-color: #EEEEEE;
-    border-radius: 20px;
 }
 
 .search input {
@@ -178,7 +225,7 @@ header {
     background: transparent;
     outline: none;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .search button {
@@ -193,95 +240,43 @@ header {
 }
 
 .user_nav a {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
 }
 
-/* 메인 네비게이션 (GNB) */
+/* 메인 네비게이션 */
 .header_bottom {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 50px;
 }
 
 .all_menu_btn {
     font-size: 20px;
-    margin-right: 30px;
+    margin-right: 25px;
     color: #333;
 }
 
-.main_nav {
-    height: 100%;
-}
-
-.main_nav > .nav_text {
+.main_nav ul {
     display: flex;
-    gap: 32px;
-    height: 100%;
-    align-items: center;
+    gap: 30px;
 }
 
-/* 1차 메뉴 */
-.main_nav > .nav_text > li {
-    position: relative; /* depth_2 띄우기 기준점 */
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.main_nav > .nav_text > li > a {
-    font-size: 18px;
-    font-weight: 600;
+.main_nav a {
+    font-size: 20px;
+    font-weight: 500;
     color: #222;
     transition: color 0.2s;
-    white-space: nowrap;
 }
 
-.main_nav > .nav_text > li > a:hover {
+.main_nav a:hover {
     color: #31CD32;
 }
 
-/* 2차 서브메뉴 (세로 정렬 고정) */
-.main_nav .depth_2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 160px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    border-radius: 8px;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.main_nav .depth_2 li {
-    width: 100%;
-}
-
-.main_nav .depth_2 li a {
-    display: block;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #555;
-    text-align: center;
-    white-space: nowrap;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.main_nav .depth_2 li a:hover {
-    background-color: #f5f5f5;
-    color: #31CD32;
-}
-
-/* ==========================================
-   스크롤 버튼
-   ========================================== */
+/* 스크롤버튼 */
 .btn_gotop {
     position: fixed;
     bottom: 35px;
@@ -307,24 +302,37 @@ header {
    3. Main Banner (Slider)
    ========================================== */
 .main_banner {
-    max-width: 1440px;
+    width: 100%;             /* 전체 화면 가로 폭 사용 */
+    max-width: none;         /* 1440px 제한 제거 */
     margin: 40px auto 240px;
-    padding: 0 20px;
+    padding: 0;              /* 화면 끝까지 확장 */
     position: relative;
+    overflow: hidden;        /* 슬라이드 잘림 깔끔하게 처리 */
 }
 
-.slider_container {
+.swiper {
     width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
+    height: 100%;
 }
 
-.slider_container img {
-    width: 100%;
+.swiper-slide {
+    width: 1195px !important; /* 카드 1개의 가로 크기를 1195px로 고정 */
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;              /* 카드 1195px에 딱 맞춤 */
     height: 590px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
+/* 슬라이더 인디케이터 */
 .slider_dots {
     display: flex;
     justify-content: center;
@@ -347,7 +355,7 @@ header {
 }
 
 /* ==========================================
-   4. Section 1: 이달의 전통식품
+   4. Section 1: 이달의 전통식품 (3열 카드리스트)
    ========================================== */
 .card_grid_3 {
     display: grid;
@@ -392,7 +400,7 @@ header {
 }
 
 /* ==========================================
-   5. Section 2: K-푸드트렌드
+   5. Section 2: K-푸드트렌드 (비디오)
    ========================================== */
 .section_title_wrap {
     display: flex;
@@ -444,7 +452,7 @@ header {
 }
 
 /* ==========================================
-   6. Section 3: 전통상차림
+   6. Section 3: 전통상차림 (왼쪽 메인 + 오른쪽 2x2)
    ========================================== */
 .tfood_container {
     display: grid;
@@ -453,7 +461,7 @@ header {
 }
 
 .main_card a {
-    position: relative; 
+    position: relative;
     display: block;
     height: 100%;
     border-radius: 12px;
@@ -462,7 +470,7 @@ header {
 
 .main_card img {
     width: 100%;
-    height: 627px; 
+    height: 627px;
     min-height: 380px;
     object-fit: cover;
 }
@@ -528,7 +536,7 @@ header {
 }
 
 /* ==========================================
-   7. Section 4: 향토&지역요리
+   7. Section 4: 향토&지역요리 (4열 12개 그리드)
    ========================================== */
 .hfood_box_grid {
     display: grid;
@@ -555,7 +563,7 @@ header {
     object-fit: cover;
 }
 
-.item_info h3 {
+.item_info h4 {
     font-size: 22px;
     font-weight: 700;
     color: #222;
@@ -626,17 +634,13 @@ footer {
         padding: 0 12px;
     }
 
-    header > .header_top {
+    header>.header_top,
+    header>.header_bottom {
         padding: unset;
         margin: unset;
     }
 
-    header > .header_bottom {
-        padding: unset;
-        margin: unset;
-    }
-
-    header > .header_bottom > button {
+    header>.header_bottom>button {
         margin-right: unset;
     }
 
@@ -665,8 +669,9 @@ footer {
         padding: 12px 16px;
     }
 
-    .search, 
-    .user_nav {
+    .search,
+    .user_nav,
+    .main_nav {
         display: none;
     }
 
@@ -676,22 +681,21 @@ footer {
         height: auto;
     }
 
-    .main_nav {
-        display: none;
-    }
-
     .all_menu_btn {
         display: block;
     }
 
     .main_banner {
         margin: 20px auto 136px;
-        padding: 0 16px;
+        padding: 0;
     }
 
-    .slider_container img {
+    .swiper-slide {
+        width: 100% !important; /* 모바일/태블릿에서는 100% 가득 차게 설정 */
+    }
+
+    .swiper-slide img {
         height: 500px;
-        object-fit: cover;
     }
 
     .card_grid_3 {
@@ -790,7 +794,7 @@ footer {
         height: 373px;
     }
 
-    .item_info h3 {
+    .item_info h4 {
         font-size: 16px;
     }
 
@@ -833,17 +837,13 @@ footer {
         padding: 0 12px;
     }
 
-    header > .header_top {
+    header>.header_top,
+    header>.header_bottom {
         padding: unset;
         margin: unset;
     }
 
-    header > .header_bottom {
-        padding: unset;
-        margin: unset;
-    }
-
-    header > .header_bottom > button {
+    header>.header_bottom>button {
         margin-right: unset;
     }
 
@@ -876,10 +876,10 @@ footer {
 
     .main_banner {
         margin: 10px auto 24px;
-        padding: 0 12px;
+        padding: 0;
     }
 
-    .slider_container img {
+    .swiper-slide img {
         height: 313px;
         border-radius: 8px;
     }
@@ -897,7 +897,7 @@ footer {
         width: 14px;
     }
 
-    main > section > .section_title,
+    main>section>.section_title,
     .section_title_wrap {
         margin-bottom: 4px;
     }
@@ -1005,7 +1005,7 @@ footer {
         border-radius: 12px;
     }
 
-    .item_info h3 {
+    .item_info h4 {
         font-size: 14px;
         text-align: center;
         margin-top: 6px;

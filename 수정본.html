@@ -6,29 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LampCook - 램프쿡</title>
+    <script src="/script/jquery-4.0.0.min.js"></script>
     <link rel="stylesheet" href="수정본.css">
     <script src="https://kit.fontawesome.com/ea782db7d4.js" crossorigin="anonymous"></script>
-    <script src="jquery-4.0.0.min.js"></script>
-    <script src="jquery-ui.min.js"></script>
-    <script>
-        $(function(){
-            $(".nav_text").on({
-                mouseenter:function(){
-                    $(this).find(".depth_2").stop().fadeIn()
-                },
-                mouseleave:function(){
-                    $(this).find(".depth_2").stop().fadeOut()
-                }
-            })
-        })
-    </script>
+    <link rel="stylesheet" href="script/swiper/swiper-bundle.min.css">
+    <script src="script/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper JS 라이브러리 및 실행 스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 'auto',  /* 카드 너비 1195px 적용 */
+        spaceBetween: 24,       /* 카드 사이 간격 */
+        centeredSlides: true,   /* 중앙 정렬 */
+        loop: true,             /* 무한 루프 */
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
 </head>
 
 <body>
     <!-- 스크롤버튼 -->
-     <a href="#" class="btn_gotop">
+    <a href="#" class="btn_gotop">
         <span class="bth_gobown"><i class="fa-solid fa-chevron-up" style="color: rgb(0, 0, 0);"></i></span>
-     </a>
+    </a>
     <!-- //스크롤버튼 -->
     <!-- header -->
     <header>
@@ -38,21 +43,21 @@
             </div>
 
             <!-- 검색바 -->
-             <div>
-                 <div class="search">
-                     <input type="text" placeholder="검색어를 입력하세요">
-                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                 </div>
-                 <!-- //검색바 -->
-     
-                 <nav class="user_nav">
-                     <ul>
-                         <li><a href="#">로그인</a></li>
-                         <li><a href="#">회원가입</a></li>
-                         <li><a href="#">고객센터</a></li>
-                     </ul>
-                 </nav>
-             </div>
+            <div>
+                <div class="search">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!-- //검색바 -->
+
+                <nav class="user_nav">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
         <div class="header_bottom">
@@ -126,24 +131,49 @@
     <!-- //header -->
 
 
-    <!-- banner (슬라이드) -->
-    <div class="main_banner">
-        <div class="slider_container">
-            <div class="slide"><img src="img/Rectangle.jpg" alt="rectangle"></div>
-        </div>
-        <!-- 슬라이드 인디케이터 (점) -->
-        <div class="slider_dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+        <div class="swiper-slide"><img src="img/Rectangle.jpg" alt="cook1"></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <!-- //banner -->
+
+  
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+   <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',  /* CSS 1195px 적용 */
+            spaceBetween: 24,       /* 슬라이드 간격 */
+            centeredSlides: true,   /* 중앙 배치 */
+            loop: true,             /* 무한 루프 */
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoint: {
+                360: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 1
+                }
+            }
+        });
+    </script>
 
     <!-- main -->
     <main>
