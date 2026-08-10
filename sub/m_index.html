@@ -5,17 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LampCook - 램프쿡지도</title>
+    <title>LampCook - 램프쿡</title>
+    <script src="/script/jquery-4.0.0.min.js"></script>
     <link rel="stylesheet" href="../css/m_style.css">
     <script src="https://kit.fontawesome.com/ea782db7d4.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="script/swiper/swiper-bundle.min.css">
+    <script src="script/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper JS 라이브러리 및 실행 스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 'auto',  /* 카드 너비 1195px 적용 */
+        spaceBetween: 24,       /* 카드 사이 간격 */
+        centeredSlides: true,   /* 중앙 정렬 */
+        loop: true,             /* 무한 루프 */
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
 
 <body>
+   <!-- 스크롤버튼 -->
+    <a href="#" class="btn_gotop">
+        <span class="bth_gobown"><i class="fa-solid fa-chevron-up" style="color: rgb(0, 0, 0);"></i></span>
+    </a>
+    <!-- //스크롤버튼 -->
     <!-- header -->
     <header>
         <div class="header_top">
             <div class="logo">
-                <a href="#"><img src="../img/logo.png" height="64" width="200" alt="LampCook 로고"></a>
+                <a href="#"><img src="../img/logo.png" height="64" width="200" alt="LampCook"></a>
             </div>
 
             <!-- 검색바 -->
@@ -42,18 +64,70 @@
             </button>
             <nav class="main_nav">
                 <ul class="nav_text">
-                    <li><a href="#">전통음식</a></li>
-                    <li><a href="#">향토&지역요리</a></li>
-                    <li><a href="#">통과의례상차림</a></li>
-                    <li><a href="#">발효전통주</a></li>
-                    <li><a href="#">한식레시피</a></li>
-                    <li><a href="#">음식인문학뉴스</a></li>
-                    <li><a href="#">사랑방커뮤니티</a></li>
+                    <li>
+                        <a href="#">전통음식</a>
+                        <ul class="depth_2">
+                            <li><a href="#">궁중반가요리</a></li>
+                            <li><a href="#">종가음식</a></li>
+                            <li><a href="#">세시음식</a></li>
+                            <li><a href="#">무형문화재 명인</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">향토&지역요리</a>
+                        <ul class="depth_2">
+                            <li><a href="#">팔도향토음식</a></li>
+                            <li><a href="#">현지맛집/노포</a></li>
+                            <li><a href="#">식재료지도</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">통과의례상차림</a>
+                        <ul class="depth_2">
+                            <li><a href="#">통과의레음식</a></li>
+                            <li><a href="#">전통상차림</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">발효전통주</a>
+                        <ul class="depth_2">
+                            <li><a href="#">장류&김치</a></li>
+                            <li><a href="#">장아찌&젓갈</a></li>
+                            <li><a href="#">전통주&막걸리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">한식레시피</a>
+                        <ul class="depth_2">
+                            <li><a href="#">종류별</a></li>
+                            <li><a href="#">난이도별</a></li>
+                            <li><a href="#">외국인추천한식</a></li>
+                            <li><a href="#">조리팁&테크닉</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">음식인문학뉴스</a>
+                        <ul class="depth_2">
+                            <li><a href="#">한식이야기</a></li>
+                            <li><a href="#">고조리서연구</a></li>
+                            <li><a href="#">K푸드트렌드</a></li>
+                            <li><a href="#">카드뉴스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">사랑방커뮤니티</a>
+                        <ul class="depth_2">
+                            <li><a href="#">오늘의 한식방</a></li>
+                            <li><a href="#">질문&답변</a></li>
+                            <li><a href="#">전통장터</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
     <!-- //header -->
+
     <main>
         <section>
             <div class="sidebar">

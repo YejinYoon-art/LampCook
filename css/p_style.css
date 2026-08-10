@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-/* ==========================================
-   0. Font Imports
-   ========================================== */
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
@@ -87,7 +84,9 @@ a {
     color: inherit;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -104,10 +103,10 @@ button {
     font-family: inherit;
 }
 
-/* 공통 컨테이너 및 섹션 */
-.container {
+/* 공통 컨테이너 및 버튼 */
+section {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 60px auto;
     padding: 0 20px;
 }
 
@@ -117,24 +116,24 @@ button {
 }
 
 .section_title h2 {
-    font-size: 32px;
+    font-size: 31px;
     font-weight: 700;
     color: #111;
 }
 
 .btn_wrap {
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 100px;
+    margin-top: 88px;
+    margin-bottom: 288px;
 }
 
 .cta_btn {
     display: inline-block;
-    padding: 16px 100px;
-    background-color: #31CD32; 
+    padding: 10px 200px;
+    background-color: #31CD32;
     color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 300;
     border-radius: 8px;
     transition: background-color 0.2s ease;
 }
@@ -146,6 +145,7 @@ button {
 /* ==========================================
    2. Header
    ========================================== */
+
 .header_top {
     max-width: 1440px;
     margin: 0 auto;
@@ -155,19 +155,19 @@ button {
     justify-content: space-between;
 }
 
-.header_top > div {
+.header_top>div {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
 /* 카테고리 */
-.header nav > ul {
+.header nav>ul {
     display: flex;
     position: relative;
 }
 
-.header nav > ul li {
+.header nav>ul li {
     width: 130px;
     text-align: center;
     height: 64px;
@@ -177,13 +177,13 @@ button {
 
 header nav ul a {
     display: block;
-    color: #222222;
+    color: #e3e3e3;
     font-size: 16px;
     font-weight: 400;
 }
 
-header nav > ul > li.on > a,
-header nav > ul > li:hover > a {
+header nav>ul>li.on>a,
+header nav>ul>li:hover>a {
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -201,11 +201,11 @@ header nav ul.depth_2 li {
     line-height: 50px;
 }
 
-header nav ul li:hover > .depth_2 {
+header nav ul li:hover>.depth_2 {
     height: 200px;
 }
 
-header nav ul.depth_2 li:hover > a {
+header nav ul.depth_2 li:hover>a {
     font-weight: bold;
     text-decoration: underline;
     text-underline-position: under;
@@ -214,11 +214,10 @@ header nav ul.depth_2 li:hover > a {
 /* 검색바 */
 .search {
     display: flex;
-    align-items: center;
-    padding: 8px 16px;
+    align-items: flex-end;
+    padding: 6px 16px;
     width: 320px;
     background-color: #EEEEEE;
-    border-radius: 4px;
 }
 
 .search input {
@@ -226,7 +225,7 @@ header nav ul.depth_2 li:hover > a {
     background: transparent;
     outline: none;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .search button {
@@ -241,7 +240,7 @@ header nav ul.depth_2 li:hover > a {
 }
 
 .user_nav a {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
 }
 
@@ -267,7 +266,7 @@ header nav ul.depth_2 li:hover > a {
 }
 
 .main_nav a {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #222;
     transition: color 0.2s;
@@ -275,6 +274,32 @@ header nav ul.depth_2 li:hover > a {
 
 .main_nav a:hover {
     color: #31CD32;
+}
+
+/* 스크롤버튼 */
+.btn_gotop {
+    position: fixed;
+    bottom: 35px;
+    right: 66px;
+    width: 63px;
+    height: 63px;
+    z-index: 9999999;
+    outline: none;
+    background-color: #31CD32;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bth_gobown {
+    font-size: 24px;
+}
+
+header {
+    margin-bottom: 40px; 
 }
 
 /* ==========================================

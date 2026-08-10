@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
@@ -61,6 +62,7 @@
     font-weight: 900;
     font-display: swap;
 }
+
 /* ==========================================
    1. Reset & Common Styles
    ========================================== */
@@ -71,7 +73,7 @@
 }
 
 body {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', sans-serif;
     color: #333333;
     background-color: #ffffff;
     line-height: 1.5;
@@ -82,7 +84,9 @@ a {
     color: inherit;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -126,7 +130,7 @@ section {
 .cta_btn {
     display: inline-block;
     padding: 10px 200px;
-    background-color: #31CD32; 
+    background-color: #31CD32;
     color: #ffffff;
     font-size: 20px;
     font-weight: 300;
@@ -151,57 +155,61 @@ section {
     justify-content: space-between;
 }
 
-.header_top > div{
+.header_top>div {
     display: flex;
     align-items: center;
     gap: 16px;
 }
+
 /* 카테고리 */
-.header nav > ul {
+.header nav>ul {
     display: flex;
     position: relative;
 }
-.header nav > ul li {
+
+.header nav>ul li {
     width: 130px;
     text-align: center;
     height: 64px;
     line-height: 64px;
     font-weight: 400;
 }
-header nav ul a {
-  display: block;
-  color: #e3e3e3;
-  font-size: 16px;
-  font-weight: 400;
-}
-header nav > ul > li.on > a,
-header nav > ul > li:hover > a {
-  font-weight: bold;
 
-  transition: all 0.3s ease;
+header nav ul a {
+    display: block;
+    color: #e3e3e3;
+    font-size: 16px;
+    font-weight: 400;
 }
- 
+
+header nav>ul>li.on>a,
+header nav>ul>li:hover>a {
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
 header nav ul.depth_2 {
-  height: 0;
-  position: absolute;
-  z-index: 5;
-  overflow: hidden;
-  transition: all 0.5s ease;
+    height: 0;
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
+
 header nav ul.depth_2 li {
-  height: 50px;
-  line-height: 50px;
+    height: 50px;
+    line-height: 50px;
 }
- 
-header nav ul li:hover > .depth_2 {
-  height: 200px;
+
+header nav ul li:hover>.depth_2 {
+    height: 200px;
 }
-header nav ul.depth_2 li:hover > a {
-  font-weight: bold;
-  text-decoration: underline;
-  text-underline-position: under;
+
+header nav ul.depth_2 li:hover>a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
 }
-/* //카테고리 */
 
 /* 검색바 */
 .search {
@@ -268,13 +276,7 @@ header nav ul.depth_2 li:hover > a {
     color: #31CD32;
 }
 
-
-/* 
-===================================
-스크롤버튼
-========================
- */
-
+/* 스크롤버튼 */
 .btn_gotop {
     position: fixed;
     bottom: 35px;
@@ -291,36 +293,48 @@ header nav ul.depth_2 li:hover > a {
     align-items: center;
     justify-content: center;
 }
+
 .bth_gobown {
     font-size: 24px;
 }
-/* //스크롤버튼 */
 
-
-
-
-
+header {
+    margin-bottom: 40px; 
+}
 /* ==========================================
    3. Main Banner (Slider)
    ========================================== */
+
 .main_banner {
-    max-width: 1440px;
-    margin: 40px auto 40px;
-    padding: 0 20px;
+    width: 100%;             /* 전체 화면 가로 폭 사용 */
+    max-width: none;         /* 1440px 제한 제거 */
+    margin: 40px auto 240px;
+    padding: 0;              /* 화면 끝까지 확장 */
     position: relative;
+    overflow: hidden;      /* 슬라이드 잘림 깔끔하게 처리 */
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
     margin-bottom: 240px;
 }
 
-.slider_container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
+.swiper-slide {
+    width: 1195px !important; /* 카드 1개의 가로 크기를 1195px로 고정 */
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.slider_container img {
-    width: 100%;
+.swiper-slide img {
+    display: block;
+    width: 100%;              /* 카드 1195px에 딱 맞춤 */
     height: 590px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 /* 슬라이더 인디케이터 */
@@ -399,11 +413,13 @@ header nav ul.depth_2 li:hover > a {
     align-items: center;
     margin-bottom: 24px;
 }
-.section_title_wrap h2{
+
+.section_title_wrap h2 {
     font-size: 31px;
     font-weight: 700;
     color: #111;
 }
+
 .sns_links {
     font-size: 18px;
     display: flex;
@@ -449,9 +465,8 @@ header nav ul.depth_2 li:hover > a {
     gap: 27px;
 }
 
-/* 왼쪽 메인 대표 카드 */
 .main_card a {
-    position: relative; 
+    position: relative;
     display: block;
     height: 100%;
     border-radius: 12px;
@@ -460,7 +475,7 @@ header nav ul.depth_2 li:hover > a {
 
 .main_card img {
     width: 100%;
-    height: 627px; 
+    height: 627px;
     min-height: 380px;
     object-fit: cover;
 }
@@ -491,7 +506,6 @@ header nav ul.depth_2 li:hover > a {
     overflow: hidden;
 }
 
-/* 오른쪽 2x2 서브 그리드 */
 .sub_card_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -521,7 +535,7 @@ header nav ul.depth_2 li:hover > a {
 
 .sub_card b {
     text-align: center;
-    font-size: 16px ;
+    font-size: 16px;
     margin-top: 4px;
     font-weight: 700;
 }
@@ -565,7 +579,7 @@ header nav ul.depth_2 li:hover > a {
     color: #888;
 }
 
-/* ///////////////////////////////// */
+/* Footer */
 footer {
     background-color: #f9f9f9;
     border-top: 1px solid #e7e7e7;
@@ -615,31 +629,26 @@ footer {
     height: 40px;
 }
 
-/* ////////////////////////// */
-/* 미디어쿼리 태블릿 */
 /* ==========================================
    8. Tablet Responsive Styles (768px 이하)
    ========================================== */
 @media screen and (max-width: 768px) {
-
-    header{
+    header {
         display: flex;
         justify-content: space-between;
         padding: 0 12px;
     }
-    header > .header_top{
+
+    header>.header_top,
+    header>.header_bottom {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom{
-        padding: unset;
-        margin: unset;
-    }
-    header > .header_bottom > button{
+
+    header>.header_bottom>button {
         margin-right: unset;
     }
 
-    /* --- 공통 요소 및 여백 재설정 --- */
     section {
         margin: 40px auto;
         padding: 0 16px;
@@ -652,23 +661,23 @@ footer {
 
     .btn_wrap {
         margin-top: 40px;
-        margin-bottom: 136px; /* PC의 288px 여백을 현실적인 모바일/태블릿 여백으로 조정 */
+        margin-bottom: 136px;
     }
 
     .cta_btn {
-        width: 100%; /* 버튼이 너비를 채우도록 설정 */
+        width: 100%;
         padding: 14px 0;
         font-size: 16px;
     }
 
-    /* --- Header --- */
     .header_top {
         padding: 12px 16px;
     }
 
-    .search, 
-    .user_nav {
-        display: none; /* 검색바 및 상단 로그인 메뉴 숨김 */
+    .search,
+    .user_nav,
+    .main_nav {
+        display: none;
     }
 
     .header_bottom {
@@ -677,26 +686,23 @@ footer {
         height: auto;
     }
 
-    .main_nav {
-        display: none; /* GNB 네비게이션 숨김 (필요시 모바일 메뉴 드로어로 구현) */
-    }
-    .all_menu_btn{
+    .all_menu_btn {
         display: block;
     }
 
-    /* --- Main Banner --- */
     .main_banner {
-        margin: 20px auto 40px;
-        padding: 0 16px;
-        margin-bottom: 136px;
+        margin: 20px auto 136px;
+        padding: 0;
     }
 
-    .slider_container img {
-        height: 500px; /* 이미지 높이 축소 */
-        object-fit: cover;
+    .swiper-slide {
+        width: 100% !important; /* 모바일/태블릿에서는 100% 가득 차게 설정 */
     }
 
-    /* --- Section 1: 이달의 전통식품 (3열 -> 2열) --- */
+    .swiper-slide img {
+        height: 500px;
+    }
+
     .card_grid_3 {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -715,23 +721,21 @@ footer {
         font-size: 14px;
     }
 
-    /* 3번째 카드 숨김 (태블릿 시안 기준 2개만 노출) */
     .card_grid_3 .card:nth-child(3) {
         display: none;
     }
 
-    /* --- Section 2: K-푸드트렌드 (2열 -> 1열) --- */
     .sns_links {
-        display: none; /* SNS 아이콘 숨김 */
+        display: none;
     }
 
     .video_grid_2 {
-        grid-template-columns: 1fr; /* 1열 배치 */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .video_card:nth-child(2) {
-        display: none; /* 태블릿 시안대로 비디오 1개만 노출 */
+        display: none;
     }
 
     .video_container video {
@@ -741,14 +745,12 @@ footer {
     .video_card h3 {
         font-size: 18px;
         font-weight: 900;
-        margin-bottom: 0;
         text-align: center;
         margin-bottom: 136px;
     }
 
-    /* --- Section 3: 전통상차림 (좌우 2열 -> 상하 1열) --- */
     .tfood_container {
-        grid-template-columns:1fr 1.2fr;
+        grid-template-columns: 1fr 1.2fr;
         gap: 16px;
     }
 
@@ -766,12 +768,11 @@ footer {
     }
 
     .sub_card_grid {
-        grid-template-columns: repeat(2, 1fr); /* 서브 카드 2열 배치 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         width: 360px;
     }
 
-    /* 태블릿 시안 기준 3번째, 4번째 서브 카드 숨김 */
     .sub_card_grid .sub_card:nth-child(3),
     .sub_card_grid .sub_card:nth-child(4) {
         display: none;
@@ -789,7 +790,6 @@ footer {
         font-size: 14px;
     }
 
-    /* --- Section 4: 향토&지역요리 (4열 -> 2열) --- */
     .hfood_box_grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 16px;
@@ -807,12 +807,10 @@ footer {
         font-size: 13px;
     }
 
-    /* 태블릿 시안 기준 상위 6개 항목만 노출 (필요 시 유지 혹은 주석 해제) */
     .hfood_box_grid .boxitem:nth-child(n+7) {
         display: none;
     }
 
-    /* --- Footer --- */
     footer {
         padding: 30px 0;
         margin-top: 40px;
@@ -830,35 +828,30 @@ footer {
     }
 
     .escrow_logo {
-        align-self: flex-end; /* 에스크로 로고 우측 정렬 */
+        align-self: flex-end;
     }
 }
 
-/* /////////////////////////////////////////// */
-/* 미디어쿼리 모바일 */
-
-
-@media screen and (max-width: 360px){
-    header{
+/* ==========================================
+   9. Mobile Responsive Styles (360px 이하)
+   ========================================== */
+@media screen and (max-width: 360px) {
+    header {
         display: flex;
         justify-content: space-between;
         padding: 0 12px;
     }
-    header > .header_top{
+
+    header>.header_top,
+    header>.header_bottom {
         padding: unset;
         margin: unset;
     }
-    header > .header_bottom{
-        padding: unset;
-        margin: unset;
-    }
-    header > .header_bottom > button{
+
+    header>.header_bottom>button {
         margin-right: unset;
     }
 
-
-
-    /* --- 공통 요소 및 여백 재설정 --- */
     section {
         margin: 28px auto;
         padding: 0 16px;
@@ -867,10 +860,8 @@ footer {
     .section_title h2,
     .section_title_wrap h2 {
         font-size: 15px;
-
     }
 
-    /* 제목 우측 화살표 링크 아이콘 연출 */
     .section_title h2::after,
     .section_title_wrap h2::after {
         content: ' >';
@@ -879,28 +870,22 @@ footer {
         font-weight: 400;
     }
 
-    /* 모바일 시안에서 하단 초록색 버튼 숨김 */
     .btn_wrap {
         display: none;
     }
 
-    /* --- Header --- */
-
     .logo img {
-        height: 32px; /* 모바일 로고 크기 축소 */
+        height: 32px;
         width: auto;
-  
     }
 
-    /* --- Main Banner --- */
     .main_banner {
         margin: 10px auto 24px;
-        padding: 0 12px;
+        padding: 0;
     }
 
-    .slider_container img {
-        height: 313px; /* 모바일 전용 슬라이드 높이 */
-        
+    .swiper-slide img {
+        height: 313px;
         border-radius: 8px;
     }
 
@@ -917,20 +902,17 @@ footer {
         width: 14px;
     }
 
-    main > section > .section_title,
-    .section_title_wrap{
+    main>section>.section_title,
+    .section_title_wrap {
         margin-bottom: 4px;
     }
-   
 
-    /* --- Section 1: 이달의 전통식품 (가로 스크롤 형태) --- */
     .card_grid_3 {
-        display: flex; /* 그리드에서 가로 플렉스로 변경하여 가로 스크롤 유도 */
+        display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 12px;
-        padding-bottom: 8px; /* 스크롤바 영역 확보 */
-        /* 스크롤바 숨기기 (선택사항) */
+        padding-bottom: 8px;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
@@ -940,12 +922,12 @@ footer {
     }
 
     .card_grid_3 .card {
-        flex: 0 0 82%; /* 화면 너비의 82%를 차지해 오른쪽 카드가 살짝 잘려 보이게 설정 */
+        flex: 0 0 82%;
         scroll-snap-align: start;
     }
 
     .card_grid_3 .card:nth-child(3) {
-        display: block; /* 모바일에서 가로 스크롤로 모두 확인 가능하게 복구 */
+        display: block;
     }
 
     .card_grid_3 .img_box {
@@ -961,10 +943,8 @@ footer {
 
     .card_grid_3 span {
         font-size: 11px;
-
     }
 
-    /* --- Section 2: K-푸드트렌드 --- */
     .video_container video {
         height: 190px;
         border-radius: 8px;
@@ -977,12 +957,10 @@ footer {
         margin-bottom: 16px;
     }
 
-    /* --- Section 3: 전통상차림 --- */
     .tfood_container {
         display: block;
     }
 
-    /* 모바일에서는 서브 카드들 숨김 */
     .sub_card_grid {
         display: none;
     }
@@ -1004,9 +982,8 @@ footer {
         font-size: 12px;
     }
 
-    /* --- Section 4: 향토&지역음식 (가로 스크롤 형태) --- */
     .hfood_box_grid {
-        display: flex; /* 가로 스크롤로 변경 */
+        display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 12px;
@@ -1020,12 +997,12 @@ footer {
     }
 
     .boxitem {
-        flex: 0 0 75%; /* 화면의 75% 지정 */
+        flex: 0 0 75%;
         scroll-snap-align: start;
     }
 
     .hfood_box_grid .boxitem:nth-child(n+3) {
-        display: flex; /* 가로 스크롤을 위해 모바일에서 노출 유지 */
+        display: flex;
     }
 
     .boxitem .img_box {
@@ -1044,7 +1021,6 @@ footer {
         text-align: center;
     }
 
-    /* --- Footer --- */
     footer {
         padding: 20px 0 30px;
         margin-top: 24px;
@@ -1065,17 +1041,16 @@ footer {
     }
 
     .escrow_logo {
-        display: none; /* 최하단 인증 마크 모바일 숨김 (선택사항) */
+        display: none;
     }
 }
 
-/* 접근성을 지키며 화면에서만 숨기는 클래스 */
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
