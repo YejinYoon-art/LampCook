@@ -84,9 +84,7 @@ a {
     color: inherit;
 }
 
-ul,
-ol,
-li {
+ul,li {
     list-style: none;
 }
 
@@ -135,7 +133,7 @@ section {
     font-size: 20px;
     font-weight: 300;
     border-radius: 8px;
-    transition: background-color 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .cta_btn:hover {
