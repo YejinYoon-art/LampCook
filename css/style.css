@@ -134,6 +134,7 @@ section {
     font-weight: 300;
     border-radius: 8px;
     transition: 0.2s ease;
+    font-weight: 700;
 }
 
 .cta_btn:hover {
@@ -628,9 +629,9 @@ footer {
 }
 
 /* ==========================================
-   8. Tablet Responsive Styles (768px 이하)
+   8. Tablet Responsive Styles (1200px 이하)
    ========================================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     header {
         display: flex;
         justify-content: space-between;
@@ -699,6 +700,7 @@ footer {
 
     .swiper-slide img {
         height: 500px;
+        border-radius: 0;
     }
 
     .card_grid_3 {
@@ -828,16 +830,19 @@ footer {
     .escrow_logo {
         align-self: flex-end;
     }
+    .btn_gotop{
+        display: none;
+    }
 }
 
 /* ==========================================
    9. Mobile Responsive Styles (360px 이하)
    ========================================== */
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
     header {
         display: flex;
         justify-content: space-between;
-        padding: 0 12px;
+        padding: 12px 12px;
     }
 
     header>.header_top,
@@ -854,7 +859,7 @@ footer {
         margin: 28px auto;
         padding: 0 16px;
     }
-
+ 
     .section_title h2,
     .section_title_wrap h2 {
         font-size: 15px;
@@ -884,7 +889,7 @@ footer {
 
     .swiper-slide img {
         height: 313px;
-        border-radius: 8px;
+        border-radius: 0px;
     }
 
     .slider_dots {
