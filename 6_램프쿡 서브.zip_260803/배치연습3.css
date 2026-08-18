@@ -1,0 +1,79 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img{
+  display: block;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.item{
+  width: 290px;
+  margin: 32px;
+}
+
+.item .imgBox{
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  margin-bottom: 16px;
+}
+.item .inner{
+  padding: 0 8px;
+}
+.item .inner .delivery{
+  margin-bottom: 8px;
+  color: #b0b0b0;
+}
+.item .inner .title{
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.item .inner .price{
+  margin-bottom: 4px;
+}
+.item .inner .price .discount .discount_label{
+  color: rgb(205, 1, 1);
+  font-weight: 500;
+  border-right: 1px solid #ccc;
+  padding-right: 4px;
+}
+.item .inner .price .discount .discount_rate{
+  font-weight: 500;
+}
+.item .inner .price .discount .original_price{
+  color: #ccc;
+  text-decoration: line-through;
+}
+.item .inner .price .finalPrice{
+    color: rgb(205, 1, 1);
+    font-weight:800;
+    font-size: 28px;
+}
+.item .inner .date{
+  margin-bottom: 8px;
+}
+.item .inner .rating{
+  margin-bottom: 8px;
+  letter-spacing:-4px;
+  /* 자간 조절 */
+}
+.item .inner .rating span{
+  color: #808080;
+  font-size: 14px;
+  letter-spacing: 0px;
+  margin-left: 4px;
+}
+
+.item .inner .benefit .benefit_box{
+  width: fit-content;
+  border: 1px solid #808080;
+  padding: 2px 12px;
+  font-size: 14px;
+  border-radius: 16px;
+  color: #808080;
+}

@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+img{
+    display: block;
+}
+#header{
+    width: 661px;
+    height: 100px;
+    margin: 30px auto;
+}
+#header .logo{
+    width: fit-content;
+    /* fit-contet : 내용물 만큼 크기 설정 */
+    height: fit-content;
+    float: left;
+    margin-top: 13px;
+}
+#header .search{
+    width: fit-content;
+    height: fit-content;
+    float: right;
+    margin-top: 13px;
+}
+#nav{
+    width: 990px;
+    height: 40px;
+    background-color: #2DB400;
+    margin: 30px auto;
+}
+#nav ul{
+    height: 100%;
+    align-content: center;
+}
+#nav ul li{
+    float: left;
+    margin: 0 12px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+}
+#section{
+    width: 990px;
+    overflow: hidden;
+    margin: auto;
+}
+#section .left{
+    width: 634px;
+    float: left;
+}
+#section .left .banner{
+    width: fit-content;
+    height: fit-content;
+}
+#section .left .new1{
+    width: 100%;
+    height: 50px;
+    background-color: #efefef;
+    margin: 10px 0;
+    border: 1px solid #bbbbbb;
+    padding-inline-end: 10px;
+    padding-top: 10px;
+}
+#section .left .new2{
+    width: 100%;
+    height: 200px;
+    background-color: #efefef;
+    border: 1px solid #bbbbbb;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#section .right{
+    width: 326px;
+    float: right;
+}
+#section .right .r1{
+    width: 100%;
+    height: 200px;
+    background-color: #efefef;
+    border: 1px solid #bbbbbb;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+#section .right .r2{
+    width: 100%;
+    height: 160px;
+    background-color: #efefef;
+    border: 1px solid #bbbbbb;
+    padding-left: 10px;
+    padding-top: 10px;
+}
