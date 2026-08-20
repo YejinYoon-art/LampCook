@@ -84,7 +84,8 @@ a {
     color: inherit;
 }
 
-ul,li {
+ul,
+li {
     list-style: none;
 }
 
@@ -161,7 +162,7 @@ section {
 }
 
 /* 카테고리 */
-.header_bottom .all_menu_btn{
+.header_bottom .all_menu_btn {
     margin-top: 16px;
 
 }
@@ -177,34 +178,41 @@ header nav ul {
 }
 
 /* 1차 메뉴 li 기준점 설정 */
-header nav ul.nav_text > li {
+header nav ul.nav_text>li {
     position: relative;
 }
 
 /* 2차 서브메뉴 (.depth_2) 기본 설정 및 초기 숨김 */
 header nav ul.depth_2 {
-    display: none;             /* 기본 숨김 처리 */
+    display: none;
+    /* 기본 숨김 처리 */
     position: absolute;
-    top: 100%;                 /* 1차 메뉴 바로 밑에 배치 */
+    top: 100%;
+    /* 1차 메뉴 바로 밑에 배치 */
     left: 50%;
-    transform: translateX(-50%); /* 중앙 정렬 */
-    
-    width: 130px;              /* 서브메뉴 박스 너비 */
+    transform: translateX(-50%);
+    /* 중앙 정렬 */
+
+    width: 130px;
+    /* 서브메뉴 박스 너비 */
     padding: 10px 0;
-    background-color: #ffffff; /* 서브메뉴 배경색 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 카드 그림자 효과 */
+    background-color: #ffffff;
+    /* 서브메뉴 배경색 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* 카드 그림자 효과 */
     border-radius: 6px;
     z-index: 100;
 }
 
 /* 마우스 올렸을 때 서브메뉴 표시 (CSS hover) */
-header nav ul.nav_text > li:hover > .depth_2 {
+header nav ul.nav_text>li:hover>.depth_2 {
     display: block;
 }
 
 /* 서브메뉴 내부 항목 세로 정렬 설정 */
 header nav ul.depth_2 li {
-    display: block;            /* 아래로 줄바꿈되도록 세로 배치 */
+    display: block;
+    /* 아래로 줄바꿈되도록 세로 배치 */
     width: 100%;
     text-align: center;
 }
@@ -212,14 +220,72 @@ header nav ul.depth_2 li {
 header nav ul.depth_2 li a {
     display: block;
     padding: 8px 0;
-    color: #333333;            /* 어두운 글자색 지정 */
+    color: #333333;
+    /* 어두운 글자색 지정 */
     font-size: 16px;
-    white-space: nowrap;       /* 텍스트 줄바꿈 방지 */
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
 }
 
 header nav ul.depth_2 li a:hover {
-    color: #1b8a43;            /* 마우스 호버 시 포인트 색상 */
+    color: #1b8a43;
+    /* 마우스 호버 시 포인트 색상 */
     font-weight: bold;
+}
+
+/* 햄버거바 */
+.header_bottom {
+    position: relative;
+}
+
+.mega_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #31CD32;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    z-index: 999;
+}
+
+.mega_menu.active {
+    display: block;
+}
+
+.mega_container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.mega_col h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #31CD32;
+}
+
+.mega_col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mega_col a {
+    font-size: 14px;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.mega_col a:hover {
+    color: #31CD32;
+    font-weight: 600;
 }
 
 /* 검색바 */
@@ -310,19 +376,24 @@ header nav ul.depth_2 li a:hover {
 }
 
 header {
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 }
+
 /* ==========================================
    3. Main Banner (Slider)
    ========================================== */
 
 .main_banner {
-    width: 100%;             /* 전체 화면 가로 폭 사용 */
-    max-width: none;         /* 1440px 제한 제거 */
+    width: 100%;
+    /* 전체 화면 가로 폭 사용 */
+    max-width: none;
+    /* 1440px 제한 제거 */
     margin: 40px auto 240px;
-    padding: 0;              /* 화면 끝까지 확장 */
+    padding: 0;
+    /* 화면 끝까지 확장 */
     position: relative;
-    overflow: hidden;      /* 슬라이드 잘림 깔끔하게 처리 */
+    overflow: hidden;
+    /* 슬라이드 잘림 깔끔하게 처리 */
 }
 
 .swiper {
@@ -332,7 +403,8 @@ header {
 }
 
 .swiper-slide {
-    width: 1195px !important; /* 카드 1개의 가로 크기를 1195px로 고정 */
+    width: 1195px !important;
+    /* 카드 1개의 가로 크기를 1195px로 고정 */
     text-align: center;
     font-size: 18px;
     display: flex;
@@ -342,7 +414,8 @@ header {
 
 .swiper-slide img {
     display: block;
-    width: 100%;              /* 카드 1195px에 딱 맞춤 */
+    width: 100%;
+    /* 카드 1195px에 딱 맞춤 */
     height: 590px;
     object-fit: cover;
     border-radius: 16px;
@@ -498,7 +571,7 @@ header {
     right: 0;
     padding: 40px;
     background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
-color: #ffffff;
+    color: #ffffff;
 }
 
 .main_card h3 {
@@ -649,15 +722,16 @@ footer {
         display: flex;
         justify-content: space-between;
         padding: 0 12px;
-       
+
     }
-    .header_top .logo{
+
+    .header_top .logo {
         margin-top: 16px;
     }
 
     header>.header_top,
     header>.header_bottom {
-       
+
         padding: unset;
         margin: unset;
     }
@@ -708,13 +782,18 @@ footer {
         display: block;
     }
 
+    .swiper {
+        margin-bottom: 152px;
+    }
+
     .main_banner {
-        margin: 20px auto 136px;
+        margin-top: 20px;
         padding: 0;
     }
 
     .swiper-slide {
-        width: 100% !important; /* 모바일/태블릿에서는 100% 가득 차게 설정 */
+        width: 100% !important;
+        /* 모바일/태블릿에서는 100% 가득 차게 설정 */
     }
 
     .swiper-slide img {
@@ -744,6 +823,12 @@ footer {
         display: none;
     }
 
+
+
+
+
+
+
     .sns_links {
         display: none;
     }
@@ -768,99 +853,69 @@ footer {
         margin-bottom: 136px;
     }
 
-
-
-    /* 전통음식섹션 */
-
- /* ==========================================
-   8. Tablet Responsive Styles (1200px 이하) 내 수정 영역
-   ========================================== */
-
-/* 전통음식섹션 (웹 버전 비율 유지 + 1200px 축소 반영) */
-.tfood_container {
-    grid-template-columns: 1.1fr 1fr; /* 웹과 동일한 비율 유지 */
-    gap: 16px;                        /* 간격 축소 */
-}
-
-.main_card img {
-    height: 400px;                    /* 메인 이미지 높이 다운 (웹: 700px -> 태블릿: 400px) */
-    min-height: auto;
-}
-
-.main_card .card_text {
-    padding: 24px;                    /* 텍스트 여백 축소 */
-}
-
-.main_card h3 {
-    font-size: 16px;
-    margin-bottom: 4px;
-}
-
-.main_card p {
-    font-size: 13px;
-}
-
-.sub_card_grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;                        /* 카드 사이 간격 축소 */
-    width: 100%;
-}
-
-/* 2x2 구조 전체 유지를 위해 숨김 해제 */
-.sub_card_grid .sub_card:nth-child(3),
-.sub_card_grid .sub_card:nth-child(4) {
-    display: flex;
-}
-
-.sub_card img {
-    height: 140px;                    /* 서브 이미지 높이 다운 (웹: 261px -> 태블릿: 140px) */
-    margin-bottom: 6px;
-}
-
-.sub_card span {
-    font-size: 12px;
-}
-
-.sub_card b {
-    font-size: 13px;
-    margin-top: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .sub_card_grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* 전통음식 */
+    /* 1. 그리드 비율 및 오타 수정 (1.1fr 1fr) */
+    .tfood_container {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
         gap: 16px;
-        width: 360px;
     }
 
+    /* 2. 메인 카드 높이 및 여백 축소 */
+    .main_card img {
+        height: 400px;
+        min-height: auto;
+    }
+
+
+
+    .main_card .card_text {
+        padding: 24px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+        color: #ffffff;
+    }
+
+
+    .main_card h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .main_card p {
+        font-size: 13px;
+    }
+
+    /* 3. 오른쪽 서브 카드 그리드 (width: 100%로 유연하게 복원) */
+    .sub_card_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        width: 100%;
+        /* 기존 360px 고정값 삭제 후 100%로 변경 */
+    }
+
+    /* 4. 2x2 카드 4개가 모두 보이도록 설정 */
+    .sub_card_grid .sub_card,
     .sub_card_grid .sub_card:nth-child(3),
     .sub_card_grid .sub_card:nth-child(4) {
-        display: none;
+        display: flex;
     }
 
     .sub_card img {
         height: 140px;
+        margin-bottom: 6px;
     }
 
     .sub_card span {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .sub_card b {
-        font-size: 14px;
+        font-size: 13px;
+        margin-top: 2px;
     }
 
+    /* ///////////////////////// */
     .hfood_box_grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 16px;
@@ -901,7 +956,8 @@ footer {
     .escrow_logo {
         align-self: flex-end;
     }
-    .btn_gotop{
+
+    .btn_gotop {
         display: none;
     }
 }
@@ -913,7 +969,8 @@ footer {
     header {
         display: flex;
         justify-content: space-between;
-        padding: 12px 12px;
+        padding: 0 12px;
+        margin-bottom: 16px;
     }
 
     header>.header_top,
@@ -927,10 +984,10 @@ footer {
     }
 
     section {
-        margin: 28px auto;
+        margin: 10px auto;
         padding: 0 16px;
     }
- 
+
     .section_title h2,
     .section_title_wrap h2 {
         font-size: 15px;
@@ -953,9 +1010,8 @@ footer {
         width: auto;
     }
 
-    .main_banner {
-        margin: 10px auto 24px;
-        padding: 0;
+    .swiper {
+        margin-bottom: 88px;
     }
 
     .swiper-slide img {
@@ -995,6 +1051,10 @@ footer {
         display: none;
     }
 
+    .card_grid_3 {
+        margin-bottom: 88px;
+    }
+
     .card_grid_3 .card {
         flex: 0 0 82%;
         scroll-snap-align: start;
@@ -1020,19 +1080,21 @@ footer {
     }
 
     .video_container video {
-        height: 190px;
+        height: auto;
         border-radius: 8px;
+
     }
 
     .video_card h3 {
         font-size: 13px;
-        line-height: 1.4;
-        margin-top: 6px;
-        margin-bottom: 16px;
+        line-height: 1;
+        margin-top: 4px;
+        margin-bottom: 88px;
     }
 
     .tfood_container {
         display: block;
+        margin-bottom: 88px;
     }
 
     .sub_card_grid {
@@ -1084,15 +1146,8 @@ footer {
         border-radius: 12px;
     }
 
-    .item_info h4 {
+    .item_info h3 {
         font-size: 14px;
-        text-align: center;
-        margin-top: 6px;
-    }
-
-    .item_info p {
-        font-size: 12px;
-        text-align: center;
     }
 
     footer {
