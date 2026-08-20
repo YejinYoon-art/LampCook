@@ -24,22 +24,25 @@
 
 
 <script>
-    $(document).ready(function() {
-        // 햄버거 버튼 클릭 시 메가메뉴 열기/닫기
-        $('.all_menu_btn').on('click', function(e) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.querySelector('.all_menu_btn');
+        const megaMenu = document.querySelector('.mega_menu');
+        const header = document.querySelector('header');
+
+        // 햄버거 버튼 클릭 시 메가메뉴 토글
+        menuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            $('.mega_menu').toggleClass('active');
+            megaMenu.classList.toggle('active');
         });
 
-        // 메가메뉴 바깥 영역 클릭하면 메뉴 닫기
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('.header_bottom').length) {
-                $('.mega_menu').removeClass('active');
+        // header 외부 영역 클릭 시 메가메뉴 닫기
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target)) {
+                megaMenu.classList.remove('active');
             }
         });
     });
 </script>
-
 </head>
 
 <body>
