@@ -5,39 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LampCook - 램프쿡</title>
-    <script src="/script/jquery-4.0.0.min.js"></script>
+    <title>LampCook - 램프쿡 (무형문화재 명인)</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/p_style.css">
+    <link rel="stylesheet" href="../script/swiper/swiper-bundle.min.css">
+    
+    <!-- 폰트어썸 -->
     <script src="https://kit.fontawesome.com/ea782db7d4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="script/swiper/swiper-bundle.min.css">
-    <script src="script/swiper/swiper-bundle.min.js"></script>
-
-<!-- Swiper JS 라이브러리 및 실행 스크립트 -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.mySwiper', {
-        slidesPerView: 'auto',  /* 카드 너비 1195px 적용 */
-        spaceBetween: 24,       /* 카드 사이 간격 */
-        centeredSlides: true,   /* 중앙 정렬 */
-        loop: true,             /* 무한 루프 */
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-</script>
+    
+    <!-- 제이쿼리 & Swiper JS -->
+    <script src="../script/jquery-4.0.0.min.js"></script>
+    <script src="../script/swiper/swiper-bundle.min.js"></script>
+    <script src="../script/Script.js" defer></script>
+</head>
 
 <body>
+    <h1 class="visually-hidden">LampCook - 무형문화재 명인 및 전통음식 가이드</h1>
+
     <!-- 스크롤버튼 -->
-    <a href="#" class="btn_gotop">
-        <span class="bth_gobown"><i class="fa-solid fa-chevron-up" style="color: rgb(0, 0, 0);"></i></span>
+    <a href="#" class="btn_gotop" aria-label="맨 위로 가기">
+        <span class="btn_top_icon"><i class="fa-solid fa-chevron-up" style="color: rgb(0, 0, 0);"></i></span>
     </a>
     <!-- //스크롤버튼 -->
     <!-- header -->
     <header>
         <div class="header_top">
             <div class="logo">
-                <a href="#"><img src="../img/logo.png" height="64" width="200" alt="LampCook"></a>
+                <a href="../index.html"><img src="../img/logo.png" height="64" width="200" alt="LampCook"></a>
             </div>
 
             <!-- 검색바 -->
@@ -84,7 +79,7 @@
                     <li>
                         <a href="#">통과의례상차림</a>
                         <ul class="depth_2">
-                            <li><a href="#">통과의레음식</a></li>
+                            <li><a href="#">통과의례음식</a></li>
                             <li><a href="#">전통상차림</a></li>
                         </ul>
                     </li>

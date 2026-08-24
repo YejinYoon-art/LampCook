@@ -5,6 +5,7 @@ $(document).ready(function () {
     const $sidebarOverlay = $('.sidebar_overlay');
     const $sidebarCloseBtn = $('.sidebar_close_btn');
     const $body = $('body');
+    const $btnGoTop = $('.btn_gotop');
 
     // 1. 햄버거 버튼 클릭
     $allMenuBtn.on('click', function (e) {
@@ -76,7 +77,61 @@ $(document).ready(function () {
         }
     });
 
-    // 6. 창 크기 변경 시 리셋
+    // 6. 스크롤 이벤트 (헤더 그림자 & TOP 버튼 페이드인)
+    $(window).on('scroll', function () {
+        const scrollTop = $(this).scrollTop();
+
+        // 헤더 그림자 효과
+        if (scrollTop > 20) {
+            $('header').css('box-shadow', '0 2px 12px rgba(0, 0, 0, 0.06)');
+        } else {
+            $('header').css('box-shadow', 'none');
+        }
+
+        // TOP 버튼 노출 여부
+        if (scrollTop > 300) {
+            if ($btnGoTop.is(':hidden')) {
+                $btnGoTop.css('display', 'flex').hide().fadeIn(250);
+            }
+        } else {
+            $btnGoTop.fadeOut(250);
+        }
+    });
+
+    // 7. TOP 버튼 클릭 시 부드럽게 최상단 이동
+    $btnGoTop.on('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 8. Swiper 슬라이더 초기화 (자동재생 & 호버 일시정지)
+    if ($('.mySwiper').length > 0 && typeof Swiper !== 'undefined') {
+        const mainSwiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                1200: {
+                    slidesPerView: 'auto',
+                }
+            }
+        });
+    }
+
+    // 9. 창 크기 변경 시 리셋
     $(window).on('resize', function () {
         if (window.innerWidth > 1200) {
             closeSidebar();

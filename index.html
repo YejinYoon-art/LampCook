@@ -21,8 +21,28 @@
     <!-- Swiper JS 라이브러리 (로컬 파일 하나만 연결) -->
     <script src="script/swiper/swiper-bundle.min.js"></script>
 
-    <!-- 커스텀 스크립트 -->
-    <script src="script/Script.js" defer></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.querySelector('.all_menu_btn');
+        const megaMenu = document.querySelector('.mega_menu');
+        const header = document.querySelector('header');
+
+        // 햄버거 버튼 클릭 시 메가메뉴 토글
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            megaMenu.classList.toggle('active');
+        });
+
+        // header 외부 영역 클릭 시 메가메뉴 닫기
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target)) {
+                megaMenu.classList.remove('active');
+            }
+        });
+    });
+</script>
 </head>
 
 <body>
@@ -188,116 +208,6 @@
         </div>
     </header>
     <!-- //header -->
-
-    <!-- 모바일 & 태블릿 사이드바 드로어 (GNB & 검색창) -->
-    <div class="sidebar_overlay"></div>
-    <aside class="sidebar_drawer">
-        <div class="sidebar_header">
-            <div class="sidebar_user">
-                <a href="#"><i class="fa-solid fa-user"></i> 로그인</a>
-                <span class="bar">|</span>
-                <a href="#">회원가입</a>
-                <span class="bar">|</span>
-                <a href="#">고객센터</a>
-            </div>
-            <button type="button" class="sidebar_close_btn" aria-label="메뉴 닫기">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <!-- 사이드바 검색바 -->
-        <div class="sidebar_search">
-            <form action="#" method="get" class="sidebar_search_form" onsubmit="return false;">
-                <input type="text" placeholder="검색어를 입력하세요">
-                <button type="button" aria-label="검색"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-
-        <!-- 사이드바 내비게이션 (아코디언 메뉴) -->
-        <nav class="sidebar_nav">
-            <ul class="sidebar_menu">
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>전통음식</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">궁중반가요리</a></li>
-                        <li><a href="#">종가음식</a></li>
-                        <li><a href="#">세시음식</a></li>
-                        <li><a href="#">무형문화재 명인</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>향토&지역요리</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">팔도향토음식</a></li>
-                        <li><a href="#">현지맛집/노포</a></li>
-                        <li><a href="#">식재료지도</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>통과의례상차림</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">통과의례음식</a></li>
-                        <li><a href="#">전통상차림</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>발효전통주</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">장류&김치</a></li>
-                        <li><a href="#">장아찌&젓갈</a></li>
-                        <li><a href="#">전통주&막걸리</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>한식레시피</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">종류별</a></li>
-                        <li><a href="#">난이도별</a></li>
-                        <li><a href="#">외국인추천한식</a></li>
-                        <li><a href="#">조리팁&테크닉</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>음식인문학뉴스</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">한식이야기</a></li>
-                        <li><a href="#">고조리서연구</a></li>
-                        <li><a href="#">K푸드트렌드</a></li>
-                        <li><a href="#">카드뉴스</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item">
-                    <div class="menu_title">
-                        <span>사랑방커뮤니티</span>
-                        <i class="fa-solid fa-chevron-down arrow_icon"></i>
-                    </div>
-                    <ul class="sidebar_depth_2">
-                        <li><a href="#">오늘의 한식방</a></li>
-                        <li><a href="#">질문&답변</a></li>
-                        <li><a href="#">전통장터</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </aside>
 
 
     <!-- Swiper -->
